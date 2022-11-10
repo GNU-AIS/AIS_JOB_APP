@@ -18,14 +18,36 @@
         app:cardCornerRadius="10dp"
         tools:ignore="MissingConstraints" >
 
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_menu_24"/>
+
+        <ToggleButton
+            android:layout_gravity="end"
+            android:checked="true"
+            android:id="@+id/tgb"
+            android:layout_width="28dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/tgb_updown_arrow"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_cdv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingHorizontal="5dp"
-            android:paddingVertical="20dp">
+            android:paddingTop="3dp"
+            android:paddingBottom="15dp">
 
             <TextView
                 android:id="@+id/tv_title"
+                android:paddingTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="wrap_content"
@@ -36,11 +58,11 @@
 
             <TextView
                 android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
                 android:id="@+id/tv_credit"
                 android:textColor="@color/writeColor1"
                 app:layout_constraintTop_toBottomOf="@id/tv_title"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/tv_toeic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/maruburi_bold"
@@ -53,32 +75,29 @@
                 android:layout_marginStart="10dp"
                 app:layout_constraintTop_toBottomOf="@id/tv_title"
                 app:layout_constraintStart_toEndOf="@id/tv_credit"
-                app:layout_constraintEnd_toStartOf="@id/tv_toeic_sp"
+                app:layout_constraintEnd_toStartOf="@id/tv_opeic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/maruburi_bold"
                 android:text="토익: 없음"/>
 
             <TextView
-                android:layout_marginTop="10dp"
                 android:id="@+id/tv_toeic_sp"
-                android:textColor="@color/writeColor1"
-                android:layout_marginStart="10dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_title"
-                app:layout_constraintStart_toEndOf="@id/tv_toeic"
-                app:layout_constraintEnd_toStartOf="@id/tv_opeic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/maruburi_bold"
-                android:text="토익스피킹: 없음"/>
+                android:text="토익스피킹: 없음"
+                android:textColor="@color/writeColor1"
+                app:layout_constraintStart_toStartOf="@+id/tv_toeic"
+                app:layout_constraintTop_toBottomOf="@id/tv_toeic" />
 
             <TextView
                 android:layout_marginTop="10dp"
                 android:id="@+id/tv_opeic"
                 android:textColor="@color/writeColor1"
-                android:layout_marginStart="10dp"
+                android:layout_marginEnd="40dp"
                 app:layout_constraintTop_toBottomOf="@id/tv_title"
-                app:layout_constraintStart_toEndOf="@id/tv_toeic_sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,78 +106,73 @@
 
 
             <TextView
+
+                android:layout_marginTop="10dp"
                 android:id="@+id/tv_foreign_lan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:fontFamily="@font/maruburi_bold"
-                android:text="기타 외국어: 없음"
+                android:text="기타외국어: 없음"
                 android:textColor="@color/writeColor1"
-                app:layout_constraintStart_toStartOf="@+id/tv_credit"
-                app:layout_constraintTop_toBottomOf="@id/tv_credit" />
+                app:layout_constraintStart_toStartOf="@+id/tv_certificate"
+                app:layout_constraintTop_toBottomOf="@+id/tv_intern" />
 
             <TextView
                 android:layout_marginTop="10dp"
                 android:id="@+id/tv_overseas_study"
-                android:textColor="@color/writeColor1"
-                android:layout_marginStart="10dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_credit"
-                app:layout_constraintStart_toEndOf="@id/tv_foreign_lan"
-                app:layout_constraintEnd_toStartOf="@id/tv_intern"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/maruburi_bold"
-                android:text="해외 경험: 없음"/>
+                android:text="해외 경험: 없음"
+                android:textColor="@color/writeColor1"
+                app:layout_constraintStart_toStartOf="@+id/tv_intern"
+                app:layout_constraintTop_toBottomOf="@+id/tv_intern" />
 
             <TextView
-                android:layout_marginTop="10dp"
                 android:id="@+id/tv_intern"
-                android:textColor="@color/writeColor1"
-                android:layout_marginStart="10dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_credit"
-                app:layout_constraintStart_toEndOf="@id/tv_overseas_study"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/maruburi_bold"
-                android:text="인턴: 무경험"/>
-
-            <TextView
                 android:layout_marginTop="10dp"
-                android:id="@+id/tv_awards"
-                android:textColor="@color/writeColor1"
-                app:layout_constraintTop_toBottomOf="@id/tv_foreign_lan"
-                app:layout_constraintStart_toStartOf="@id/tv_credit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:fontFamily="@font/maruburi_bold"
-                android:text="교내/외 수상: 0회"/>
+                android:text="인턴: 무경험"
+                android:textColor="@color/writeColor1"
+                app:layout_constraintStart_toStartOf="@+id/tv_opeic"
+                app:layout_constraintTop_toBottomOf="@id/tv_credit" />
 
             <TextView
+                android:id="@+id/tv_awards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maruburi_bold"
+                android:text="교내/외 수상: 0회"
+                android:textColor="@color/writeColor1"
+                app:layout_constraintStart_toStartOf="@id/tv_credit"
+                app:layout_constraintTop_toBottomOf="@id/tv_foreign_lan" />
+
+            <TextView
+
                 android:layout_marginTop="10dp"
                 android:id="@+id/tv_volunteer"
-                android:textColor="@color/writeColor1"
-                android:layout_marginStart="10dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_foreign_lan"
-                app:layout_constraintStart_toEndOf="@id/tv_awards"
-                app:layout_constraintEnd_toStartOf="@id/tv_certificate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/maruburi_bold"
-                android:text="봉사활동: 0회"/>
+                android:text="봉사활동: 0회"
+                android:textColor="@color/writeColor1"
+                app:layout_constraintStart_toStartOf="@+id/tv_toeic_sp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_toeic_sp" />
 
             <TextView
+
                 android:layout_marginTop="10dp"
                 android:id="@+id/tv_certificate"
-                android:textColor="@color/writeColor1"
-                android:layout_marginStart="10dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_foreign_lan"
-                app:layout_constraintStart_toEndOf="@id/tv_volunteer"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/maruburi_bold"
-                android:text="자격증: 0개"/>
+                android:text="자격증: 0개"
+                android:textColor="@color/writeColor1"
+                app:layout_constraintStart_toStartOf="@+id/tv_credit"
+                app:layout_constraintTop_toBottomOf="@+id/tv_credit" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

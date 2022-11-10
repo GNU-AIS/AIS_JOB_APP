@@ -30,6 +30,17 @@ public class AnalysisFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.textAnalysis.setText("취업 분석 화면");
+
+        // 나의 커리어 보기
+        binding.tgb.setOnClickListener(v->{
+            if(binding.tgb.isChecked()){
+                binding.clCdv.setVisibility(View.VISIBLE);
+                binding.ivMenu.setVisibility(View.GONE);
+            } else {
+                binding.clCdv.setVisibility(View.GONE);
+                binding.ivMenu.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     @Override
