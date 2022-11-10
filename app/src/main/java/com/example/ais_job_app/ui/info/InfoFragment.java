@@ -1,25 +1,27 @@
-package com.example.ais_job_app.ui.analysis;
+package com.example.ais_job_app.ui.info;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.ais_job_app.R;
 import com.example.ais_job_app.databinding.FragmentAnalysisBinding;
+import com.example.ais_job_app.databinding.FragmentInfoBinding;
 
+public class InfoFragment extends Fragment {
 
-public class AnalysisFragment extends Fragment {
-
-    private FragmentAnalysisBinding binding;
+    private FragmentInfoBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentAnalysisBinding.inflate(inflater, container, false);
+        binding = FragmentInfoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         return root;
@@ -29,7 +31,7 @@ public class AnalysisFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.textAnalysis.setText("취업 분석 화면");
+        binding.textInfo.setText("앱 기타 정보 화면");
     }
 
     @Override

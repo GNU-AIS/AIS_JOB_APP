@@ -2,5 +2,9 @@
     <string name="app_name">AIS_JOB_APP</string>
     <string name="title_home">홈</string>
     <string name="title_dashboard">기업공고</string>
-    <string name="title_notifications">취업분석</string>
+    <string name="title_analysis">취업분석</string>
+    <string name="title_info">정보</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="myCareer">내 커리어</string>
 </resources>
