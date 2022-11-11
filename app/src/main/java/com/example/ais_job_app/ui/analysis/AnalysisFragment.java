@@ -47,8 +47,8 @@ public class AnalysisFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.textAnalysis.setText("취업 분석 화면");
-
+        binding.tvIsEmpty2.setText("표시할 수 있는 취업정보가 없어요");
+        binding.tvIsEmpty.setText("텅...");
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity(), R.array.myCarrier, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         //드롭다운뷰 연결
         adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);

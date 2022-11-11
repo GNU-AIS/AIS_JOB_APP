@@ -213,18 +213,32 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/text_analysis"
+        android:textColor="@color/writeColor2"
+        android:fontFamily="@font/cafe24"
+        android:id="@+id/tv_is_empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="72sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_is_empty_2"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:textColor="@color/writeColor2"
+        android:textStyle="bold"
+        android:fontFamily="@font/cafe24"
+        android:id="@+id/tv_is_empty_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:textAlignment="center"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/cdv_carrier" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

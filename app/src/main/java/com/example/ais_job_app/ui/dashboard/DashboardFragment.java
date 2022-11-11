@@ -31,8 +31,9 @@ public class DashboardFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.textDashboard.setText("기업 채용 공고 화면");
+        binding.tvIsEmpty2.setText("표시할 수 있는 채용공고가 없어요");
 
+        binding.tvIsEmpty.setText("텅...");
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity(), R.array.myRegion, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         //드롭다운뷰 연결
         adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
