@@ -22,8 +22,6 @@
         app:titleTextAppearance="?attr/textAppearanceSubtitle1" />
     </com.google.android.material.appbar.AppBarLayout>
 
-
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"

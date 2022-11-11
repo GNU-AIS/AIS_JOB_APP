@@ -13,9 +13,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.ais_job_app.AppManager;
+import com.example.ais_job_app.ComRecInfo;
+import com.example.ais_job_app.JobCarrierInfo;
 import com.example.ais_job_app.R;
 import com.example.ais_job_app.databinding.FragmentAnalysisBinding;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,12 +28,16 @@ public class AnalysisFragment extends Fragment {
 
     private FragmentAnalysisBinding binding;
 
+    private ArrayList<JobCarrierInfo> jobCarrierInfoArrayList = new ArrayList<>();
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
+        /* 바인딩 설정 */
         binding = FragmentAnalysisBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        /* 나의 커리어 토글 설정 */
         if (Float.compare(AppManager.getInstance().getMap().get("myCareerTgb"), 1.0f) == 0) {
             binding.tgb.setChecked(true);
             binding.clCdv.setVisibility(View.VISIBLE);
@@ -40,6 +48,14 @@ public class AnalysisFragment extends Fragment {
             binding.ivMenu.setVisibility(View.VISIBLE);
         }
 
+
+        /* ui */
+        binding.tvIsEmpty2.setText("표시할 수 있는 취업정보가 없어요");
+        binding.tvIsEmpty.setText("텅...");
+
+        /**/
+        jobCarrierInfoArrayList = (ArrayList<JobCarrierInfo>) AppManager.getInstance().getJobCarrierInfoArrayList().clone();
+
         return root;
     }
 
@@ -47,15 +63,11 @@ public class AnalysisFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.tvIsEmpty2.setText("표시할 수 있는 취업정보가 없어요");
-        binding.tvIsEmpty.setText("텅...");
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity(), R.array.myCarrier, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         //드롭다운뷰 연결
         adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         //UI와 연결
         binding.spMyCarrier.setAdapter(adapter);
-
-
 
         // 나의 커리어 보기
         binding.tgb.setOnClickListener(v -> {
@@ -70,12 +82,24 @@ public class AnalysisFragment extends Fragment {
                 AppManager.getInstance().savePref(requireActivity(), "myCareerTgb", 0.0f);
             }
         });
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.d("__test__", AppManager.getInstance().getMap().get("myCareerTgb").toString());
+
+        /* 기업이 없으면 글자 표시 */
+        if(jobCarrierInfoArrayList.isEmpty()) {
+            binding.tvIsEmpty.setVisibility(View.VISIBLE);
+            binding.tvIsEmpty2.setVisibility(View.VISIBLE);
+        } else {
+
+            binding.tvIsEmpty.setVisibility(View.GONE);
+            binding.tvIsEmpty2.setVisibility(View.GONE);
+        }
+
+
     }
 
     @Override
