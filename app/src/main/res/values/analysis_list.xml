@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="myCarrier">
+        <item>커리어 선택</item>
+        <item>1개 이상</item>
+        <item>2개 이상</item>
+        <item>3개 이상</item>
+    </string-array>
+</resources>

@@ -6,6 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdv_search"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="3dp"
+        app:cardCornerRadius="10dp"
+        tools:ignore="MissingConstraints" >
+
+        <androidx.appcompat.widget.SearchView
+            app:queryBackground="@android:color/transparent"
+            android:queryBackground="@android:color/transparent"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Spinner
+        android:id="@+id/sp_region"
+        app:layout_constraintTop_toBottomOf="@id/cdv_search"
+        app:layout_constraintEnd_toEndOf="@id/cdv_search"
+        android:layout_width="140dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/sp_field"
+        app:layout_constraintTop_toBottomOf="@id/cdv_search"
+        app:layout_constraintEnd_toStartOf="@id/sp_region"
+        android:layout_marginEnd="5dp"
+        android:layout_width="140dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/text_dashboard"
         android:layout_width="match_parent"
