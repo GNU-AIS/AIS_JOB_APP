@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AIS_JOB_APP</string>
+    <string name="app_name">개발자기업</string>
     <string name="title_home">메인정보</string>
     <string name="title_dashboard">기업공고</string>
     <string name="title_analysis">취업분석</string>

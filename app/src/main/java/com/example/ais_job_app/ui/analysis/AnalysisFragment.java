@@ -1,27 +1,30 @@
 package com.example.ais_job_app.ui.analysis;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.ais_job_app.AppManager;
-import com.example.ais_job_app.ComRecInfo;
 import com.example.ais_job_app.JobCarrierInfo;
 import com.example.ais_job_app.R;
 import com.example.ais_job_app.databinding.FragmentAnalysisBinding;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
 
 
 public class AnalysisFragment extends Fragment {
@@ -30,6 +33,9 @@ public class AnalysisFragment extends Fragment {
 
     private ArrayList<JobCarrierInfo> jobCarrierInfoArrayList = new ArrayList<>();
 
+    /* 버튼 애니메이션 */
+    private Animation rotateOpen, rotateClose, fromBottom, toBottom;
+    private Boolean fabClickedFlag = false;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -50,13 +56,47 @@ public class AnalysisFragment extends Fragment {
 
 
         /* ui */
+        rotateOpen = AnimationUtils.loadAnimation(requireContext(), R.anim.fab_rotate_open_an);
+        rotateClose = AnimationUtils.loadAnimation(requireContext(), R.anim.fab_rotate_close_an);
+        fromBottom = AnimationUtils.loadAnimation(requireContext(), R.anim.fab_from_bottom_an);
+        toBottom = AnimationUtils.loadAnimation(requireContext(), R.anim.fab_to_bottom_an);
+
         binding.tvIsEmpty2.setText("표시할 수 있는 취업정보가 없어요");
         binding.tvIsEmpty.setText("텅...");
+
+        initCarrierScore();
+
+
 
         /**/
         jobCarrierInfoArrayList = (ArrayList<JobCarrierInfo>) AppManager.getInstance().getJobCarrierInfoArrayList().clone();
 
         return root;
+    }
+
+    private void initCarrierScore() {
+        HashMap<String, Float> mapCarrier = AppManager.getInstance().getMapCarrier();
+        float credit = mapCarrier.get("credit");
+        float toeic = mapCarrier.get("toeic");
+        float toeicSp = mapCarrier.get("toeic_sp");
+        float opic = mapCarrier.get("opic");
+        float foreign_lan = mapCarrier.get("foreign_lan");
+        float certificate = mapCarrier.get("certificate");
+        float intern = mapCarrier.get("intern");
+        float volunteer = mapCarrier.get("volunteer");
+        float awards = mapCarrier.get("awards");
+        float overseasStudy = mapCarrier.get("overseas_study");
+
+        binding.tvCredit.setText("학점: " + credit);
+        binding.tvToeic.setText("토익: " + (int)toeic);
+        binding.tvToeicSp.setText("토익스피킹: " + (int)toeicSp);
+        binding.tvOpeic.setText("OPIC: " + (int)opic);
+        binding.tvForeignLan.setText("기타외국어: " + (int)foreign_lan + "개");
+        binding.tvCertificate.setText("자격증: " + (int)certificate + "개");
+        binding.tvIntern.setText("인턴: " + (int)intern + "개월");
+        binding.tvVolunteer.setText("봉사활동: " + (int)volunteer + "시간");
+        binding.tvAwards.setText("교내/외 수상: " + (int)awards + "회");
+        binding.tvOverseasStudy.setText("해외경험: " + (int)overseasStudy + "회" );
     }
 
 
@@ -83,12 +123,74 @@ public class AnalysisFragment extends Fragment {
             }
         });
 
+        /* fab 열기/닫기 버튼 */
+        binding.fab.setOnClickListener(v->{
+            onOpenFabClick();
+        });
+        binding.fabEdit.setOnClickListener(v->{
+            Intent intent = new Intent(requireActivity(), EditCarrierActivity.class);
+            startActivity(intent);
+        });
+        binding.fabClear.setOnClickListener(v->{
+            HashMap<String, Float> mapCarrier = new HashMap<>();
+            mapCarrier.put("credit", 0.0f);
+            mapCarrier.put("toeic", 0.0f);
+            mapCarrier.put("toeic_sp", 0.0f);
+            mapCarrier.put("opic", 0.0f);
+            mapCarrier.put("foreign_lan", 0.0f);
+            mapCarrier.put("certificate", 0.0f);
+            mapCarrier.put("intern", 0.0f);
+            mapCarrier.put("volunteer", 0.0f);
+            mapCarrier.put("awards", 0.0f);
+            mapCarrier.put("overseas_study", 0.0f);
+            AppManager.getInstance().setMapCarrier(mapCarrier);
+            SharedPreferences sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            for(String key : mapCarrier.keySet()) {
+                Log.d("__test__", key);
+                editor.putFloat(key, mapCarrier.get(key) != null ? mapCarrier.get(key) : 0.0f);
+            }
+            editor.apply();
+            Toast.makeText(requireContext(), "커리어가 초기화 되었습니다.", Toast.LENGTH_SHORT).show();
+            onResume();
+        });
+    }
+
+    private void onOpenFabClick() {
+        setVisibility(fabClickedFlag);
+        setAnimation(fabClickedFlag);
+        fabClickedFlag = !fabClickedFlag;
+    }
+
+    private void setAnimation(Boolean flag) {
+        if(!flag) {
+            binding.fabClear.setVisibility(View.VISIBLE);
+            binding.fabEdit.setVisibility(View.VISIBLE);
+        } else {
+            binding.fabClear.setVisibility(View.INVISIBLE);
+            binding.fabEdit.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void setVisibility(Boolean flag) {
+        if(!flag) {
+            binding.fabClear.startAnimation(fromBottom);
+            binding.fabEdit.startAnimation(fromBottom);
+            binding.fab.setImageResource(R.drawable.ic_baseline_add_24);
+            binding.fab.startAnimation(rotateOpen);
+        } else {
+            binding.fabClear.startAnimation(toBottom);
+            binding.fabEdit.startAnimation(toBottom);
+            binding.fab.setImageResource(R.drawable.ic_baseline_edit_note_24);
+            binding.fab.startAnimation(rotateClose);
+        }
     }
 
     @Override
     public void onResume() {
         super.onResume();
 
+        initCarrierScore();
         /* 기업이 없으면 글자 표시 */
         if(jobCarrierInfoArrayList.isEmpty()) {
             binding.tvIsEmpty.setVisibility(View.VISIBLE);

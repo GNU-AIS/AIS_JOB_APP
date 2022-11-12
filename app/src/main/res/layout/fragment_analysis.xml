@@ -19,6 +19,7 @@
         app:cardCornerRadius="10dp"
         tools:ignore="MissingConstraints" >
 
+
         <androidx.appcompat.widget.SearchView
             app:queryBackground="@android:color/transparent"
             android:queryBackground="@android:color/transparent"
@@ -123,7 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="50dp"
                 android:fontFamily="@font/maruburi_bold"
                 android:text="OPIC: 없음"
                 android:textColor="@color/writeColor1"
@@ -250,6 +251,32 @@
         app:backgroundTint="#515151"
         app:tint="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:src="@drawable/ic_baseline_edit_24"
+        app:backgroundTint="#515151"
+        app:tint="@android:color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/fab_clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:src="@drawable/ic_baseline_delete_outline_24"
+        app:backgroundTint="#515151"
+        app:tint="@android:color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/fab"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
 

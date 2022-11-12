@@ -11,6 +11,7 @@ public class AppManager {
 
     /* 필드 */
     private HashMap<String, Float> map = new HashMap<>();
+    private HashMap<String, Float> mapCarrier = new HashMap<>();
     private ArrayList<AppManager> managerArrayList = new ArrayList<>();
     private ArrayList<JobCarrierInfo> jobCarrierInfoArrayList = new ArrayList<>();
 
@@ -23,6 +24,17 @@ public class AppManager {
     public void initPref(Activity activity){
         SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
         map.put("myCareerTgb", sharedPref.getFloat("myCareerTgb", 1.0f));
+
+        mapCarrier.put("credit", sharedPref.getFloat("credit", 0.0f));
+        mapCarrier.put("toeic", sharedPref.getFloat("toeic", 0.0f));
+        mapCarrier.put("toeic_sp", sharedPref.getFloat("toeic_sp", 0.0f));
+        mapCarrier.put("opic", sharedPref.getFloat("opic", 0.0f));
+        mapCarrier.put("foreign_lan", sharedPref.getFloat("foreign_lan", 0.0f));
+        mapCarrier.put("certificate", sharedPref.getFloat("certificate", 0.0f));
+        mapCarrier.put("intern", sharedPref.getFloat("intern", 0.0f));
+        mapCarrier.put("volunteer", sharedPref.getFloat("volunteer", 0.0f));
+        mapCarrier.put("awards", sharedPref.getFloat("awards", 0.0f));
+        mapCarrier.put("overseas_study", sharedPref.getFloat("overseas_study", 0.0f));
     }
 
     public void savePref(Activity activity, String key, float value){
@@ -57,4 +69,15 @@ public class AppManager {
     public void setJobCarrierInfoArrayList(ArrayList<JobCarrierInfo> jobCarrierInfoArrayList) {
         this.jobCarrierInfoArrayList = jobCarrierInfoArrayList;
     }
+
+    public HashMap<String, Float> getMapCarrier() {
+        return mapCarrier;
+    }
+
+    public void setMapCarrier(HashMap<String, Float> mapCarrier) {
+        this.mapCarrier = mapCarrier;
+    }
+
+
+
 }
