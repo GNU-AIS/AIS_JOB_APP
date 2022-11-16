@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="10dp"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/maruburi_light"
+                android:maxLines="1"
+                android:text="기업 이름"
+                android:textColor="@color/writeColor1"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/maruburi_light"
+                android:maxLines="1"
+                android:text="시작일 2022.11.15(화) 마감일 2022.11.30(수)"
+                android:textColor="@color/writeColor1"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:foregroundGravity="center_horizontal"
+                android:id="@+id/iv_profile"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/test_image" />
+
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/maruburi_light"
+                android:maxLines="1"
+                android:text="AI 알고리즘, 서버 구축, 모바일 APP, OS및 하드웨어 연동 개발 4개"
+                android:textColor="@color/writeColor1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_career"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/maruburi_light"
+                android:maxLines="1"
+                android:text="신입.경력, 학력 무관, 병역 특례"
+                android:textColor="@color/writeColor1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_pattern"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/maruburi_light"
+                android:maxLines="1"
+                android:text="정규직, 연봉 3000, 주5일 (월~금) 09:00~18:00"
+                android:textColor="@color/writeColor1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/maruburi_light"
+                android:maxLines="1"
+                android:text="서울시 금천구, 서울전지역, 구로구, 관악구, 동작구, 영등포구, 마포구, 서대문구, 용산구, 강남구, 강북구, 강서구, 동대문구, 서초구, 경기도 광명시 지도"
+                android:textColor="@color/writeColor1"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

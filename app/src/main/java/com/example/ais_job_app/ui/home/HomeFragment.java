@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.ais_job_app.R;
 import com.example.ais_job_app.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
