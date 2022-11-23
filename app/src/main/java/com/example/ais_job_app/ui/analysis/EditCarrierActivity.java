@@ -32,27 +32,35 @@ public class EditCarrierActivity extends AppCompatActivity {
 
     private void saveCarrier() {
         HashMap<String, Float> mapCarrier = new HashMap<>();
-        mapCarrier.put("credit", Float.valueOf(String.valueOf(binding.etCredit.getText().equals("") ? "0.0f" : binding.etCredit.getText())));
-        mapCarrier.put("toeic", Float.valueOf(String.valueOf(binding.etToeic.getText().equals("") ? "0.0f" : binding.etToeic.getText())));
-        mapCarrier.put("toeic_sp", Float.valueOf(String.valueOf(binding.etToeicSp.getText().equals("") ? "0.0f" : binding.etToeicSp.getText())));
-        mapCarrier.put("opic", Float.valueOf(String.valueOf(binding.etOpic.getText().equals("") ? "0.0f" : binding.etOpic.getText())));
-        mapCarrier.put("foreign_lan", Float.valueOf(String.valueOf(binding.etForeignLan.getText().equals("") ? "0.0f" : binding.etForeignLan.getText())));
-        mapCarrier.put("certificate", Float.valueOf(String.valueOf(binding.etCertificate.getText().equals("") ? "0.0f" : binding.etCertificate.getText())));
-        mapCarrier.put("intern", Float.valueOf(String.valueOf(binding.etIntern.getText().equals("") ? "0.0f" : binding.etIntern.getText())));
-        mapCarrier.put("volunteer", Float.valueOf(String.valueOf(binding.etVolunteer.getText().equals("") ? "0.0f" : binding.etVolunteer.getText())));
-        mapCarrier.put("awards", Float.valueOf(String.valueOf(binding.etAwards.getText().equals("") ? "0.0f" : binding.etAwards.getText())));
-        mapCarrier.put("overseas_study", Float.valueOf(String.valueOf(binding.etOverseasStudy.getText().equals("") ? "0.0f" : binding.etOverseasStudy.getText())));
+        if(binding.etCredit.getText().toString().equals("") || binding.etToeic.getText().toString().equals("") || binding.etToeicSp.getText().toString().equals("") ||
+                binding.etOpic.getText().toString().equals("") || binding.etForeignLan.getText().toString().equals("") || binding.etCertificate.getText().toString().equals("") ||
+                binding.etIntern.getText().toString().equals("") || binding.etVolunteer.getText().toString().equals("") || binding.etAwards.getText().toString().equals("") ||
+                binding.etOverseasStudy.getText().toString().equals("")){
+            Toast.makeText(this, "입력되지 않은 빈칸이 있습니다.", Toast.LENGTH_SHORT).show();
 
-        AppManager.getInstance().setMapCarrier(mapCarrier);
+        } else{
+            mapCarrier.put("credit", Float.valueOf(String.valueOf(binding.etCredit.getText())));
+            mapCarrier.put("toeic", Float.valueOf(String.valueOf( binding.etToeic.getText())));
+            mapCarrier.put("toeic_sp", Float.valueOf(String.valueOf(binding.etToeicSp.getText())));
+            mapCarrier.put("opic", Float.valueOf(String.valueOf(binding.etOpic.getText())));
+            mapCarrier.put("foreign_lan", Float.valueOf(String.valueOf(binding.etForeignLan.getText())));
+            mapCarrier.put("certificate", Float.valueOf(String.valueOf(binding.etCertificate.getText())));
+            mapCarrier.put("intern", Float.valueOf(String.valueOf(binding.etIntern.getText())));
+            mapCarrier.put("volunteer", Float.valueOf(String.valueOf(binding.etVolunteer.getText())));
+            mapCarrier.put("awards", Float.valueOf(String.valueOf(binding.etAwards.getText())));
+            mapCarrier.put("overseas_study", Float.valueOf(String.valueOf(binding.etOverseasStudy.getText())));
 
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        for(String key : mapCarrier.keySet()) {
-            Log.d("__test__", key);
-            editor.putFloat(key, mapCarrier.get(key) != null ? mapCarrier.get(key) : 0.0f);
+            AppManager.getInstance().setMapCarrier(mapCarrier);
+
+            SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            for(String key : mapCarrier.keySet()) {
+                Log.d("__test__", key);
+                editor.putFloat(key, mapCarrier.get(key) != null ? mapCarrier.get(key) : 0.0f);
+            }
+            editor.apply();
+            Toast.makeText(this, "커리어가 저장되었습니다.", Toast.LENGTH_SHORT).show();
+            onBackPressed();
         }
-        editor.apply();
-        Toast.makeText(this, "커리어가 저장되었습니다.", Toast.LENGTH_SHORT).show();
-        onBackPressed();
     }
 }
