@@ -26,6 +26,11 @@ public class CorpReqInfoAdapter extends RecyclerView.Adapter<CorpReqInfoAdapter.
         this.context = context;
     }
 
+    public void setListItems(ArrayList<CorpReqInfo> list){
+        this.corpReqInfos = list;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public CorpReqInfoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

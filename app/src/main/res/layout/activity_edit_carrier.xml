@@ -115,7 +115,7 @@
                 android:fontFamily="@font/maruburi_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="기타외국어"/>
+                android:text="기타외국어 (개수)"/>
 
             <EditText
                 android:id="@+id/et_foreign_lan"
@@ -131,7 +131,7 @@
                 android:fontFamily="@font/maruburi_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="자격증"/>
+                android:text="자격증 (개수)"/>
 
             <EditText
                 android:id="@+id/et_certificate"
@@ -147,7 +147,7 @@
                 android:fontFamily="@font/maruburi_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="인턴"/>
+                android:text="인턴 (개월)"/>
 
             <EditText
                 android:id="@+id/et_intern"
@@ -163,7 +163,7 @@
                 android:fontFamily="@font/maruburi_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="봉사활동"/>
+                android:text="봉사활동 (시간)"/>
 
             <EditText
                 android:id="@+id/et_volunteer"
@@ -179,7 +179,7 @@
                 android:fontFamily="@font/maruburi_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="교내/외 수상 경험"/>
+                android:text="교내/외 수상 경험 (횟수)"/>
 
             <EditText
                 android:id="@+id/et_awards"
@@ -195,7 +195,7 @@
                 android:fontFamily="@font/maruburi_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="해외 경험"/>
+                android:text="해외 경험 (횟수)"/>
 
             <EditText
                 android:id="@+id/et_overseas_study"

@@ -20,7 +20,7 @@
         tools:ignore="MissingConstraints" >
 
         <androidx.appcompat.widget.SearchView
-
+            android:id="@+id/searchView"
             app:queryHint="기업의 이름을 입력하세요"
             app:queryBackground="@android:color/transparent"
             android:queryBackground="@android:color/transparent"
