@@ -1,6 +1,8 @@
 package com.example.ais_job_app;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -13,13 +15,21 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.ais_job_app.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+
+
 
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
 
         // 바인딩(원래는 객체를 생성하고 R.id를 넣어야 하지만
         // 바인딩을 하므로서 객체를 생성하지 않고 binding.id 이런식으로 쓰는게 가능해짐
