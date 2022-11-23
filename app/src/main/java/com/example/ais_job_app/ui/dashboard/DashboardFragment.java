@@ -56,25 +56,16 @@ public class DashboardFragment extends Fragment {
         // 검색 결과에 맞는 리스트만 만들기 위한 리스트를 만듬
         ArrayList<CorpReqInfo> arrayList = new ArrayList<>();
         for(CorpReqInfo corpReqInfo : corpReqInfos){
-            if(corpReqInfo.getName().toLowerCase().contains((str.toLowerCase()))){
-                arrayList.add(corpReqInfo);
-            } else if (corpReqInfo.getDay().toLowerCase().contains((str.toLowerCase()))){
-                arrayList.add(corpReqInfo);
-            }else if (corpReqInfo.getTitle().toLowerCase().contains((str.toLowerCase()))){
-                arrayList.add(corpReqInfo);
-            }else if (corpReqInfo.getCareer().toLowerCase().contains((str.toLowerCase()))){
-                arrayList.add(corpReqInfo);
-            }else if (corpReqInfo.getEducation().toLowerCase().contains((str.toLowerCase()))){
-                arrayList.add(corpReqInfo);
-            }else if (corpReqInfo.getPreference().toLowerCase().contains((str.toLowerCase()))){
-                arrayList.add(corpReqInfo);
-            }else if (corpReqInfo.getPattern().toLowerCase().contains((str.toLowerCase()))){
-                arrayList.add(corpReqInfo);
-            }else if (corpReqInfo.getSalary().toLowerCase().contains((str.toLowerCase()))){
-                arrayList.add(corpReqInfo);
-            }else if (corpReqInfo.getArea().toLowerCase().contains((str.toLowerCase()))){
-                arrayList.add(corpReqInfo);
-            }else if (corpReqInfo.getTitle().toLowerCase().contains((str.toLowerCase()))){
+            if(corpReqInfo.getName().toLowerCase().contains((str.toLowerCase())) ||
+                    corpReqInfo.getDay().toLowerCase().contains((str.toLowerCase())) ||
+                    corpReqInfo.getTitle().toLowerCase().contains((str.toLowerCase())) ||
+                    corpReqInfo.getCareer().toLowerCase().contains((str.toLowerCase())) ||
+                    corpReqInfo.getEducation().toLowerCase().contains((str.toLowerCase())) ||
+                    corpReqInfo.getPreference().toLowerCase().contains((str.toLowerCase())) ||
+                    corpReqInfo.getPattern().toLowerCase().contains((str.toLowerCase())) ||
+                    corpReqInfo.getSalary().toLowerCase().contains((str.toLowerCase())) ||
+                    corpReqInfo.getArea().toLowerCase().contains((str.toLowerCase())) ||
+                    corpReqInfo.getTime().toLowerCase().contains((str.toLowerCase()))){
                 arrayList.add(corpReqInfo);
             }
         }
@@ -113,11 +104,11 @@ public class DashboardFragment extends Fragment {
 
         /**/
 
-        corpReqInfos.add(new CorpReqInfo("삼성", "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
-        corpReqInfos.add(new CorpReqInfo("엘쥐", "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
-        corpReqInfos.add(new CorpReqInfo("skt", "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
-        corpReqInfos.add(new CorpReqInfo("kt", "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
-        corpReqInfos.add(new CorpReqInfo("경상국립대학교", "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
+        corpReqInfos.add(new CorpReqInfo("삼성", "시작일 : 00 00 00 마감일 : 00 00 00" , "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
+        corpReqInfos.add(new CorpReqInfo("엘쥐", "시작일 : 00 00 00 마감일 : 00 00 00" , "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
+        corpReqInfos.add(new CorpReqInfo("skt", "시작일 : 00 00 00 마감일 : 00 00 00" , "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
+        corpReqInfos.add(new CorpReqInfo("kt", "시작일 : 00 00 00 마감일 : 00 00 00" , "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
+        corpReqInfos.add(new CorpReqInfo("경상국립대학교", "시작일 : 00 00 00 마감일 : 00 00 00" , "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
 
 
         corpReqInfoAdapter = new CorpReqInfoAdapter(corpReqInfos, requireContext());

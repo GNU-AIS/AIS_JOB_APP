@@ -13,8 +13,10 @@ public class CorpReqInfo {
     private String time;    // 시간
     private String profile; // 이미지
 
-    public CorpReqInfo(String name, String title, String career, String education, String preference, String pattern, String salary, String area, String time, String profile) {
+
+    public CorpReqInfo(String name, String day, String title, String career, String education, String preference, String pattern, String salary, String area, String time, String profile) {
         this.name = name;
+        this.day = day;
         this.title = title;
         this.career = career;
         this.education = education;
