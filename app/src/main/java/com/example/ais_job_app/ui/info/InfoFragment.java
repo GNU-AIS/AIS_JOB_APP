@@ -39,7 +39,7 @@ public class InfoFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.textInfo.setText("앱 기타 정보 화면");
-
+        //test
 
         List<String> data = new ArrayList<>();
 
