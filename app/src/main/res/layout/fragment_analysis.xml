@@ -214,6 +214,21 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:text="테스트"
+        android:textColor="@color/writeColor2"
+        android:fontFamily="@font/cafe24"
+        android:id="@+id/testText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_is_empty_2"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <TextView
         android:textColor="@color/writeColor2"
         android:fontFamily="@font/cafe24"
         android:id="@+id/tv_is_empty"
