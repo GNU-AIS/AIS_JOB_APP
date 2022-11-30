@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             // Runnable() : 실행 코드가 담긴 객체
             @Override
             public void run() {
-                AppManager.getInstance().setJsons(data);
+                //AppManager.getInstance().setJsons(data);
                 ArrayList<JobCarrierInfo> list = new Gson().fromJson(data, new TypeToken<ArrayList<JobCarrierInfo>>(){}.getType());
                 AppManager.getInstance().setJobCarrierInfoArrayList(list);
             } // run() : 실행될 코드가 들어있는 메소드
