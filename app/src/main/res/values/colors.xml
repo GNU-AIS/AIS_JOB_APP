@@ -10,4 +10,6 @@
     <color name="writeColor1">#272727</color>
     <color name="writeColor2">#A1A1A1</color>
     <color name="writeColor3">#E0E0E0</color>
+
+    <color name="backColor1">#DADADA</color>
 </resources>

@@ -14,6 +14,9 @@ public class AppManager {
     private HashMap<String, Float> mapCarrier = new HashMap<>();
     private ArrayList<AppManager> managerArrayList = new ArrayList<>();
     private ArrayList<JobCarrierInfo> jobCarrierInfoArrayList = new ArrayList<>();
+    private String jsons = "";
+
+
 
     /* 싱글톤 구조 */
     private AppManager(){}
@@ -46,6 +49,15 @@ public class AppManager {
     }
 
     /* Getter & Setter */
+
+    public String getJsons() {
+        return jsons;
+    }
+
+    public void setJsons(String jsons) {
+        this.jsons = jsons;
+    }
+
     public HashMap<String, Float> getMap() {
         return map;
     }

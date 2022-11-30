@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="10dp"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:paddingHorizontal="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/maruburi_light"
+                    android:maxLines="1"
+                    android:text="기업 이름"
+                    android:textStyle="bold"
+                    android:textColor="@color/writeColor1"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/maruburi_light"
+                    android:maxLines="1"
+                    android:text=" - "
+                    android:textColor="@color/writeColor1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/maruburi_light"
+                    android:maxLines="1"
+                    android:text="2022년 1분기"
+                    android:textColor="@color/writeColor1"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="10dp"
+                android:background="@color/backColor1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TableLayout
+                android:layout_marginVertical="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/tv_credit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="학점"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_toeic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="토익"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_toeic_sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="토익스피킹"
+                        android:textColor="@color/writeColor1"
+                        android:gravity="center"
+                        android:textSize="16sp" />
+
+
+
+
+                </TableRow>
+
+                <TableRow
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/backColor1">
+
+                    <TextView
+                        android:id="@+id/tv_credit_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="-"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_toeic_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="-"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_toeic_sp_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="-"
+                        android:textColor="@color/writeColor1"
+                        android:gravity="center"
+                        android:textSize="16sp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/tv_certificate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="자격증"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_intern"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="인턴"
+                        android:gravity="center"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_opeic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="오픽"
+                        android:gravity="center"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/backColor1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/tv_certificate_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="-"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_intern_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="-"
+                        android:gravity="center"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_opeic_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="-"
+                        android:gravity="center"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/tv_overseas_study"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="해외 경험"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_external_activities"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="대외 활동"
+                        android:gravity="center"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_awards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="수상내역"
+                        android:gravity="center"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/backColor1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/tv_overseas_study_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="-"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_external_activities_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="-"
+                        android:gravity="center"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_awards_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/maruburi_light"
+                        android:maxLines="1"
+                        android:text="-"
+                        android:gravity="center"
+                        android:textColor="@color/writeColor1"
+                        android:textSize="16sp" />
+
+
+                </TableRow>
+            </TableLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
