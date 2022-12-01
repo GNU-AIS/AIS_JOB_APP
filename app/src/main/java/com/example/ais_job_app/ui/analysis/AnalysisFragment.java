@@ -46,10 +46,7 @@ public class AnalysisFragment extends Fragment {
     private Animation rotateOpen, rotateClose, fromBottom, toBottom;
     private Boolean fabClickedFlag = false;
 
-
     /**/
-
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         /* 바인딩 설정 */
@@ -66,7 +63,6 @@ public class AnalysisFragment extends Fragment {
             binding.ivMenu.setVisibility(View.VISIBLE);
         }
 
-
         /* ui */
         rotateOpen = AnimationUtils.loadAnimation(requireContext(), R.anim.fab_rotate_open_an);
         rotateClose = AnimationUtils.loadAnimation(requireContext(), R.anim.fab_rotate_close_an);
@@ -79,11 +75,7 @@ public class AnalysisFragment extends Fragment {
             binding.tvIsEmpty.setVisibility(View.GONE);
             binding.tvIsEmpty2.setVisibility(View.GONE);
         }
-
         initCarrierScore();
-
-
-
         /**/
         jobCarrierInfoArrayList = AppManager.getInstance().getJobCarrierInfoArrayList();
         binding.testText.setText(AppManager.getInstance().getJsons());
@@ -91,31 +83,27 @@ public class AnalysisFragment extends Fragment {
         return binding.getRoot();
     }
 
-
     private void initCarrierScore() {
         float credit = mapCarrier.get("credit");
         float toeic = mapCarrier.get("toeic");
         float toeicSp = mapCarrier.get("toeic_sp");
         float opic = mapCarrier.get("opic");
-        float foreign_lan = mapCarrier.get("foreign_lan");
         float certificate = mapCarrier.get("certificate");
         float intern = mapCarrier.get("intern");
-        float volunteer = mapCarrier.get("volunteer");
         float awards = mapCarrier.get("awards");
         float overseasStudy = mapCarrier.get("overseas_study");
+        float externalActivities = mapCarrier.get("external_activities");
 
         binding.tvCredit.setText("학점: " + credit);
         binding.tvToeic.setText("토익: " + (int)toeic);
         binding.tvToeicSp.setText("토익스피킹: " + (int)toeicSp);
         binding.tvOpeic.setText("OPIC: " + (int)opic);
-        binding.tvForeignLan.setText("기타외국어: " + (int)foreign_lan + "개");
         binding.tvCertificate.setText("자격증: " + (int)certificate + "개");
         binding.tvIntern.setText("인턴: " + (int)intern + "개월");
-        binding.tvVolunteer.setText("봉사활동: " + (int)volunteer + "시간");
-        binding.tvAwards.setText("교내/외 수상: " + (int)awards + "회");
+        binding.tvExternalActivities.setText("대외 활동: " + (int)externalActivities + "회");
+        binding.tvAwards.setText("수상 경험: " + (int)awards + "회");
         binding.tvOverseasStudy.setText("해외경험: " + (int)overseasStudy + "회" );
     }
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -132,7 +120,6 @@ public class AnalysisFragment extends Fragment {
                 binding.clCdv.setVisibility(View.VISIBLE);
                 binding.ivMenu.setVisibility(View.GONE);
                 AppManager.getInstance().savePref(requireActivity(), "myCareerTgb", 1.0f);
-
             } else {
                 binding.clCdv.setVisibility(View.GONE);
                 binding.ivMenu.setVisibility(View.VISIBLE);
@@ -173,9 +160,7 @@ public class AnalysisFragment extends Fragment {
         });
 
         analysisAdapter = new AnalysisAdapter(jobCarrierInfoArrayList, requireContext(), mapCarrier);
-
         binding.rv.setHasFixedSize(true);
-
         binding.rv.setAdapter(analysisAdapter);
 
     }
@@ -220,12 +205,9 @@ public class AnalysisFragment extends Fragment {
             binding.tvIsEmpty.setVisibility(View.VISIBLE);
             binding.tvIsEmpty2.setVisibility(View.VISIBLE);
         } else {
-
             binding.tvIsEmpty.setVisibility(View.GONE);
             binding.tvIsEmpty2.setVisibility(View.GONE);
         }
-
-
     }
 
     @Override

@@ -115,22 +115,6 @@
                 android:fontFamily="@font/maruburi_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="기타외국어 (개수)"/>
-
-            <EditText
-                android:id="@+id/et_foreign_lan"
-                android:paddingStart="10dp"
-                android:layout_width="300dp"
-                android:layout_height="30dp"
-                android:background="@drawable/border"/>
-
-            <TextView
-                android:layout_marginVertical="10dp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textColor="@color/writeColor1"
-                android:fontFamily="@font/maruburi_regular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="자격증 (개수)"/>
 
             <EditText
@@ -163,10 +147,10 @@
                 android:fontFamily="@font/maruburi_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="봉사활동 (시간)"/>
+                android:text="대외 활동 (횟수)"/>
 
             <EditText
-                android:id="@+id/et_volunteer"
+                android:id="@+id/et_external_activities"
                 android:paddingStart="10dp"
                 android:layout_width="300dp"
                 android:layout_height="30dp"
@@ -179,7 +163,7 @@
                 android:fontFamily="@font/maruburi_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="교내/외 수상 경험 (횟수)"/>
+                android:text="수상 경험 (횟수)"/>
 
             <EditText
                 android:id="@+id/et_awards"

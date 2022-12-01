@@ -99,7 +99,6 @@
                 android:id="@+id/tv_toeic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/maruburi_bold"
                 android:text="토익: 없음"
@@ -113,11 +112,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
                 android:fontFamily="@font/maruburi_bold"
                 android:text="토익스피킹: 없음"
                 android:textColor="@color/writeColor1"
-                app:layout_constraintStart_toStartOf="@+id/tv_toeic"
-                app:layout_constraintTop_toBottomOf="@id/tv_toeic" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
             <TextView
                 android:id="@+id/tv_opeic"
@@ -128,20 +128,18 @@
                 android:fontFamily="@font/maruburi_bold"
                 android:text="OPIC: 없음"
                 android:textColor="@color/writeColor1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_title" />
-
+                app:layout_constraintStart_toStartOf="@id/tv_toeic_sp"
+                app:layout_constraintTop_toBottomOf="@id/tv_toeic_sp" />
 
             <TextView
-
-                android:id="@+id/tv_foreign_lan"
+                android:id="@+id/tv_external_activities"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/maruburi_bold"
-                android:text="기타외국어: 없음"
+                android:text="대외 활동: 없음"
                 android:textColor="@color/writeColor1"
-                app:layout_constraintStart_toStartOf="@+id/tv_certificate"
+                app:layout_constraintStart_toStartOf="@+id/tv_intern"
                 app:layout_constraintTop_toBottomOf="@+id/tv_intern" />
 
             <TextView
@@ -152,8 +150,8 @@
                 android:fontFamily="@font/maruburi_bold"
                 android:text="해외 경험: 없음"
                 android:textColor="@color/writeColor1"
-                app:layout_constraintStart_toStartOf="@+id/tv_intern"
-                app:layout_constraintTop_toBottomOf="@+id/tv_intern" />
+                app:layout_constraintStart_toStartOf="@+id/tv_certificate"
+                app:layout_constraintTop_toBottomOf="@+id/tv_certificate" />
 
             <TextView
                 android:id="@+id/tv_intern"
@@ -162,9 +160,10 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/maruburi_bold"
                 android:text="인턴: 무경험"
+                android:layout_marginEnd="50dp"
                 android:textColor="@color/writeColor1"
-                app:layout_constraintStart_toStartOf="@+id/tv_opeic"
-                app:layout_constraintTop_toBottomOf="@id/tv_credit" />
+                app:layout_constraintStart_toStartOf="@id/tv_toeic"
+                app:layout_constraintTop_toBottomOf="@id/tv_toeic" />
 
             <TextView
                 android:id="@+id/tv_awards"
@@ -172,22 +171,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/maruburi_bold"
-                android:text="교내/외 수상: 0회"
+                android:text="수상 경험: 0회"
                 android:textColor="@color/writeColor1"
-                app:layout_constraintStart_toStartOf="@id/tv_credit"
-                app:layout_constraintTop_toBottomOf="@id/tv_foreign_lan" />
+                app:layout_constraintStart_toStartOf="@id/tv_opeic"
+                app:layout_constraintTop_toBottomOf="@id/tv_opeic" />
 
-            <TextView
-
-                android:id="@+id/tv_volunteer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/maruburi_bold"
-                android:text="봉사활동: 0회"
-                android:textColor="@color/writeColor1"
-                app:layout_constraintStart_toStartOf="@+id/tv_toeic_sp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_toeic_sp" />
 
             <TextView
 

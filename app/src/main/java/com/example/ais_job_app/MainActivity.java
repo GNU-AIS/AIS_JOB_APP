@@ -2,13 +2,8 @@ package com.example.ais_job_app;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -23,19 +18,19 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private RequestThread thread = new RequestThread(); // Thread 생성
-    private String testUrl = "http://175.200.108.201:5000/output";
-    private Handler handler = new Handler();// Thread에서 전달받은 값을 메인으로 가져오기 위한 Handler
+    private String testUrl = "http://175.200.108.201:5000/job";
+    private Handler handler;
 
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        handler = new Handler();// Thread에서 전달받은 값을 메인으로 가져오기 위한 Handler
 
         // 바인딩(원래는 객체를 생성하고 R.id를 넣어야 하지만
         // 바인딩을 하므로서 객체를 생성하지 않고 binding.id 이런식으로 쓰는게 가능해짐
@@ -53,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
         NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
 
-        thread.start(); // Thread 시작
+        // 공채랑 합격자 스팩을 순차적으로 불러옴
+        thread.start();
+
         // 설정
         setInit();
     }
@@ -64,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     class RequestThread extends Thread { // url을 읽을 때도 앱이 동작할 수 있게 하기 위해 Thread 생성
-
+        int index = 1;
         @Override
         public void run() { // 이 쓰레드에서 실행 될 메인 코드
             try {
@@ -87,7 +84,9 @@ public class MainActivity extends AppCompatActivity {
                             line = reader.readLine(); // readLine() : 한 줄을 읽어오는 함수
                             if (line == null) // 만약 읽어올 줄이 없으면 break
                                 break;
-                            println(line);
+                            println(line, index++);
+                            testUrl = "http://175.200.108.201:5000/corp";
+                            start();
                         }
                         reader.close(); // 입력이 끝남
                     }
@@ -99,15 +98,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void println(final String data){ // final : 변수의 상수화 => 변수 변경 불가
+    public void println(final String data, int i){ // final : 변수의 상수화 => 변수 변경 불가
         handler.post(new Runnable() {
             // post() : 핸들러에서 쓰레드로 ()를 보냄
             // Runnable() : 실행 코드가 담긴 객체
             @Override
             public void run() {
                 //AppManager.getInstance().setJsons(data);
-                ArrayList<JobCarrierInfo> list = new Gson().fromJson(data, new TypeToken<ArrayList<JobCarrierInfo>>(){}.getType());
-                AppManager.getInstance().setJobCarrierInfoArrayList(list);
+                if(i == 1){
+                    ArrayList<JobCarrierInfo> list = new Gson().fromJson(data, new TypeToken<ArrayList<JobCarrierInfo>>(){}.getType());
+                    AppManager.getInstance().setJobCarrierInfoArrayList(list);
+                } else if(i == 2){
+                    ArrayList<CorpReqInfo> list = new Gson().fromJson(data, new TypeToken<ArrayList<CorpReqInfo>>(){}.getType());
+                    AppManager.getInstance().setCorpReqInfoArrayList(list);
+                }
             } // run() : 실행될 코드가 들어있는 메소드
         });
     }

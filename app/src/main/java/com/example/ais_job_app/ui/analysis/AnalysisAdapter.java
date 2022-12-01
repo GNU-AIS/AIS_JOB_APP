@@ -1,6 +1,8 @@
 package com.example.ais_job_app.ui.analysis;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +21,16 @@ public class AnalysisAdapter extends RecyclerView.Adapter<AnalysisAdapter.ViewHo
 
     ArrayList<JobCarrierInfo> jobCarrierInfos;
     Context context;
+    HashMap<String, Float> mapCarrier;
+    Drawable upImage, downImage;
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     public AnalysisAdapter(ArrayList<JobCarrierInfo> jobCarrierInfos, Context context, HashMap<String, Float> mapCarrier) {
         this.jobCarrierInfos = jobCarrierInfos;
         this.context = context;
+        this.mapCarrier = mapCarrier;
+        this.upImage = context.getDrawable(R.drawable.ic_up_red);
+        this.downImage = context.getDrawable(R.drawable.ic_down_blue);
     }
 
     @NonNull
@@ -47,6 +55,38 @@ public class AnalysisAdapter extends RecyclerView.Adapter<AnalysisAdapter.ViewHo
         holder.tv_overseas_study_n.setText(jobCarrierInfo.getOverseasStudy());
         holder.tv_external_activities_n.setText(jobCarrierInfo.getExternalActivities());
         holder.tv_awards_n.setText(jobCarrierInfo.getAwards());
+
+        if (mapCarrier.get("credit") < Float.parseFloat(jobCarrierInfo.getCredit())) holder.tv_credit.setCompoundDrawables(null, null, upImage, null);
+        else if (mapCarrier.get("credit") > Float.parseFloat(jobCarrierInfo.getCredit())) holder.tv_credit.setCompoundDrawables(null, null, downImage, null);
+        else holder.tv_credit.setCompoundDrawables(null, null, null, null);
+
+        if (mapCarrier.get("toeic") < Float.parseFloat(jobCarrierInfo.getToeic())) holder.tv_toeic.setCompoundDrawables(null, null, upImage, null);
+        else if (mapCarrier.get("toeic") > Float.parseFloat(jobCarrierInfo.getToeic())) holder.tv_toeic.setCompoundDrawables(null, null, downImage, null);
+        else holder.tv_toeic.setCompoundDrawables(null, null, null, null);
+
+        if (mapCarrier.get("toeic_sp") < Float.parseFloat(jobCarrierInfo.getToeic_sp())) holder.tv_toeic_sp.setCompoundDrawables(null, null, upImage, null);
+        else if (mapCarrier.get("toeic_sp") > Float.parseFloat(jobCarrierInfo.getToeic_sp())) holder.tv_toeic_sp.setCompoundDrawables(null, null, downImage, null);
+        else holder.tv_toeic_sp.setCompoundDrawables(null, null, null, null);
+
+        if (mapCarrier.get("intern") < Float.parseFloat(jobCarrierInfo.getIntern())) holder.tv_intern.setCompoundDrawables(null, null, upImage, null);
+        else if (mapCarrier.get("intern") > Float.parseFloat(jobCarrierInfo.getIntern())) holder.tv_intern.setCompoundDrawables(null, null, downImage, null);
+        else holder.tv_intern.setCompoundDrawables(null, null, null, null);
+
+        if (mapCarrier.get("opic") < Float.parseFloat(jobCarrierInfo.getOpeic())) holder.tv_opeic.setCompoundDrawables(null, null, upImage, null);
+        else if (mapCarrier.get("opic") > Float.parseFloat(jobCarrierInfo.getOpeic())) holder.tv_opeic.setCompoundDrawables(null, null, downImage, null);
+        else holder.tv_opeic.setCompoundDrawables(null, null, null, null);
+
+        if (mapCarrier.get("overseas_study") < Float.parseFloat(jobCarrierInfo.getOverseasStudy())) holder.tv_overseas_study.setCompoundDrawables(null, null, upImage, null);
+        else if (mapCarrier.get("overseas_study") > Float.parseFloat(jobCarrierInfo.getOverseasStudy())) holder.tv_overseas_study.setCompoundDrawables(null, null, downImage, null);
+        else holder.tv_overseas_study.setCompoundDrawables(null, null, null, null);
+
+        if (mapCarrier.get("external_activities") < Float.parseFloat(jobCarrierInfo.getExternalActivities())) holder.tv_external_activities.setCompoundDrawables(null, null, upImage, null);
+        else if (mapCarrier.get("external_activities") > Float.parseFloat(jobCarrierInfo.getExternalActivities())) holder.tv_external_activities.setCompoundDrawables(null, null, downImage, null);
+        else holder.tv_external_activities.setCompoundDrawables(null, null, null, null);
+
+        if (mapCarrier.get("awards") < Float.parseFloat(jobCarrierInfo.getAwards())) holder.tv_awards.setCompoundDrawables(null, null, upImage, null);
+        else if (mapCarrier.get("awards") > Float.parseFloat(jobCarrierInfo.getAwards())) holder.tv_awards.setCompoundDrawables(null, null, downImage, null);
+        else holder.tv_external_activities.setCompoundDrawables(null, null, null, null);
     }
 
     @Override
