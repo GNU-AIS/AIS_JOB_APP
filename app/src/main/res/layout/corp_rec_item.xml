@@ -26,6 +26,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,16 +49,6 @@
                 android:textColor="@color/writeColor1"
                 android:textSize="10sp" />
 
-            <ImageView
-                android:layout_gravity="center_horizontal"
-                android:foregroundGravity="center_horizontal"
-                android:id="@+id/iv_profile"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/test_image" />
-
-
             <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
@@ -65,7 +56,9 @@
                 android:layout_marginTop="10dp"
                 android:ellipsize="end"
                 android:fontFamily="@font/maruburi_light"
-                android:maxLines="1"
+                android:maxLines="2"
+                android:textStyle="bold"
+                android:lineHeight="30dp"
                 android:text="AI 알고리즘, 서버 구축, 모바일 APP, OS및 하드웨어 연동 개발 4개"
                 android:textColor="@color/writeColor1"
                 android:textSize="16sp" />
@@ -83,6 +76,7 @@
                 android:textSize="12sp" />
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/tv_pattern"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

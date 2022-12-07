@@ -73,20 +73,19 @@ public class AnalysisFragment extends Fragment {
         fromBottom = AnimationUtils.loadAnimation(requireContext(), R.anim.fab_from_bottom_an);
         toBottom = AnimationUtils.loadAnimation(requireContext(), R.anim.fab_to_bottom_an);
 
-        binding.tvIsEmpty2.setText("표시할 수 있는 채용공고가 없어요");
+
+
+        initCarrierScore();
+
+        binding.tvIsEmpty2.setText("표시할 수 있는 커리어가 없어요");
         binding.tvIsEmpty.setText("텅...");
-        if(jobCarrierInfoArrayList.isEmpty()){
+        if(!jobCarrierInfoArrayList.isEmpty()){
             binding.tvIsEmpty.setVisibility(View.GONE);
             binding.tvIsEmpty2.setVisibility(View.GONE);
         }
 
-        initCarrierScore();
-
-
-
         /**/
         jobCarrierInfoArrayList = AppManager.getInstance().getJobCarrierInfoArrayList();
-        binding.testText.setText(AppManager.getInstance().getJsons());
 
         return binding.getRoot();
     }
@@ -125,6 +124,8 @@ public class AnalysisFragment extends Fragment {
         adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         //UI와 연결
         binding.spMyCarrier.setAdapter(adapter);
+
+
 
         // 나의 커리어 보기
         binding.tgb.setOnClickListener(v -> {

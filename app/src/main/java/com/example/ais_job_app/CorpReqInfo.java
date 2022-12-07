@@ -12,9 +12,9 @@ public class CorpReqInfo {
     private String area;    // 지역
     private String time;    // 시간
     private String profile; // 이미지
+    private String basicAddr;   // 고용 주소
 
-
-    public CorpReqInfo(String name, String day, String title, String career, String education, String preference, String pattern, String salary, String area, String time, String profile) {
+    public CorpReqInfo(String name, String day, String title, String career, String education, String preference, String pattern, String salary, String area, String time, String profile, String basicAddr) {
         this.name = name;
         this.day = day;
         this.title = title;
@@ -26,6 +26,15 @@ public class CorpReqInfo {
         this.area = area;
         this.time = time;
         this.profile = profile;
+        this.basicAddr = basicAddr;
+    }
+
+    public String getBasicAddr() {
+        return basicAddr;
+    }
+
+    public void setBasicAddr(String basicAddr) {
+        this.basicAddr = basicAddr;
     }
 
     public String getDay() {
@@ -115,4 +124,5 @@ public class CorpReqInfo {
     public void setTime(String time) {
         this.time = time;
     }
+
 }

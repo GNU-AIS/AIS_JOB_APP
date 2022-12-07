@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/text_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maruburi_light"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="기업 이름"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/text_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maruburi_light"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="모집 제목"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_addr"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/text_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maruburi_light"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:linksClickable="true"
+            android:autoLink="web"
+            android:text="모집 주소"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_day"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/text_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maruburi_light"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:linksClickable="true"
+            android:autoLink="web"
+            android:text="모직 기간"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_career"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/text_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maruburi_light"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="경력"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_preference"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/text_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maruburi_light"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="우대"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tv_education"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/text_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maruburi_light"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="학력"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_pattern"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/text_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maruburi_light"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="고용 형태"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_salary"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/text_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maruburi_light"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="연봉"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/text_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maruburi_light"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="근무시간"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_area"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/text_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maruburi_light"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="지역"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

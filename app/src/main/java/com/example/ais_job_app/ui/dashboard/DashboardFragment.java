@@ -14,6 +14,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.ais_job_app.AppManager;
 import com.example.ais_job_app.CorpReqInfo;
 import com.example.ais_job_app.R;
 import com.example.ais_job_app.databinding.FragmentDashboardBinding;
@@ -24,7 +25,7 @@ import java.util.Locale;
 public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
-    private ArrayList<CorpReqInfo> corpReqInfos = new ArrayList<>();
+    private ArrayList<CorpReqInfo> corpReqInfos = AppManager.getInstance().getCorpReqInfoArrayList();
 
     private CorpReqInfoAdapter corpReqInfoAdapter;
 
@@ -48,6 +49,13 @@ public class DashboardFragment extends Fragment {
                 return true;
             }
         });
+
+        binding.tvIsEmpty2.setText("표시할 수 있는 채용공고가 없어요");
+        binding.tvIsEmpty.setText("텅...");
+        if(!corpReqInfos.isEmpty()){
+            binding.tvIsEmpty.setVisibility(View.GONE);
+            binding.tvIsEmpty2.setVisibility(View.GONE);
+        }
 
         return binding.getRoot();
     }
@@ -83,12 +91,8 @@ public class DashboardFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.tvIsEmpty2.setText("표시할 수 있는 채용공고가 없어요");
-        binding.tvIsEmpty.setText("텅...");
-        if(corpReqInfos.isEmpty()){
-            binding.tvIsEmpty.setVisibility(View.GONE);
-            binding.tvIsEmpty2.setVisibility(View.GONE);
-        }
+
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity(), R.array.myRegion, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         //드롭다운뷰 연결
         adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
@@ -103,20 +107,9 @@ public class DashboardFragment extends Fragment {
 
 
         /**/
-
-        corpReqInfos.add(new CorpReqInfo("삼성", "시작일 : 00 00 00 마감일 : 00 00 00" , "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
-        corpReqInfos.add(new CorpReqInfo("엘쥐", "시작일 : 00 00 00 마감일 : 00 00 00" , "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
-        corpReqInfos.add(new CorpReqInfo("skt", "시작일 : 00 00 00 마감일 : 00 00 00" , "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
-        corpReqInfos.add(new CorpReqInfo("kt", "시작일 : 00 00 00 마감일 : 00 00 00" , "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
-        corpReqInfos.add(new CorpReqInfo("경상국립대학교", "시작일 : 00 00 00 마감일 : 00 00 00" , "이렇게 좋은 기업에 올사람 구합니다.", "초보가능", "고졸가능", "군필우대", "정규직", "연봉3000", "경상도가능", "주5", ""));
-
-
         corpReqInfoAdapter = new CorpReqInfoAdapter(corpReqInfos, requireContext());
-
         binding.rv.setHasFixedSize(true);
-
         binding.rv.setAdapter(corpReqInfoAdapter);
-
     }
 
     @Override

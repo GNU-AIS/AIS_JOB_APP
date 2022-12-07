@@ -12,7 +12,8 @@ public class AppManager {
     /* 필드 */
     private HashMap<String, Float> map = new HashMap<>();
     private HashMap<String, Float> mapCarrier = new HashMap<>();
-    private ArrayList<AppManager> managerArrayList = new ArrayList<>();
+
+    private ArrayList<CorpReqInfo> corpReqInfoArrayList = new ArrayList<>();
     private ArrayList<JobCarrierInfo> jobCarrierInfoArrayList = new ArrayList<>();
     private String jsons = "";
 
@@ -66,12 +67,12 @@ public class AppManager {
         this.map = map;
     }
 
-    public ArrayList<AppManager> getManagerArrayList() {
-        return managerArrayList;
+    public ArrayList<CorpReqInfo> getCorpReqInfoArrayList() {
+        return corpReqInfoArrayList;
     }
 
-    public void setManagerArrayList(ArrayList<AppManager> managerArrayList) {
-        this.managerArrayList = managerArrayList;
+    public void setCorpReqInfoArrayList(ArrayList<CorpReqInfo> corpReqInfoArrayList) {
+        this.corpReqInfoArrayList = corpReqInfoArrayList;
     }
 
     public ArrayList<JobCarrierInfo> getJobCarrierInfoArrayList() {

@@ -1,5 +1,6 @@
 package com.example.ais_job_app.ui.analysis;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ais_job_app.JobCarrierInfo;
 import com.example.ais_job_app.R;
+import com.example.ais_job_app.databinding.DialCorpReqItemBinding;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -89,6 +91,7 @@ public class AnalysisAdapter extends RecyclerView.Adapter<AnalysisAdapter.ViewHo
             tv_overseas_study_n = itemView.findViewById(R.id.tv_overseas_study_n);
             tv_external_activities_n = itemView.findViewById(R.id.tv_external_activities_n);
             tv_awards_n = itemView.findViewById(R.id.tv_awards_n);
+
 
         }
     }
