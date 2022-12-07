@@ -107,7 +107,7 @@ public class AnalysisFragment extends Fragment {
         binding.tvOpeic.setText("OPIC: " + (int)opic);
         binding.tvCertificate.setText("자격증: " + (int)certificate + "개");
         binding.tvIntern.setText("인턴: " + (int)intern + "개월");
-        binding.tvAwards.setText("교내/외 수상: " + (int)awards + "회");
+        binding.tvAwards.setText("수상 경험: " + (int)awards + "회");
         binding.tvOverseasStudy.setText("해외경험: " + (int)overseasStudy + "회" );
     }
 
