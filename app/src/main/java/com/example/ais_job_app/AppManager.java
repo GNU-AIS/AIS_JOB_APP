@@ -15,6 +15,7 @@ public class AppManager {
 
     private ArrayList<CorpReqInfo> corpReqInfoArrayList = new ArrayList<>();
     private ArrayList<JobCarrierInfo> jobCarrierInfoArrayList = new ArrayList<>();
+    private ArrayList<CorpReqInfo> corpReqInfoArrayList = new ArrayList<>();
     private String jsons = "";
 
 
@@ -33,12 +34,12 @@ public class AppManager {
         mapCarrier.put("toeic", sharedPref.getFloat("toeic", 0.0f));
         mapCarrier.put("toeic_sp", sharedPref.getFloat("toeic_sp", 0.0f));
         mapCarrier.put("opic", sharedPref.getFloat("opic", 0.0f));
-        mapCarrier.put("foreign_lan", sharedPref.getFloat("foreign_lan", 0.0f));
         mapCarrier.put("certificate", sharedPref.getFloat("certificate", 0.0f));
         mapCarrier.put("intern", sharedPref.getFloat("intern", 0.0f));
-        mapCarrier.put("volunteer", sharedPref.getFloat("volunteer", 0.0f));
         mapCarrier.put("awards", sharedPref.getFloat("awards", 0.0f));
         mapCarrier.put("overseas_study", sharedPref.getFloat("overseas_study", 0.0f));
+        mapCarrier.put("external_activities", sharedPref.getFloat("external_activities", 0.0f));
+
     }
 
     public void savePref(Activity activity, String key, float value){
@@ -50,6 +51,14 @@ public class AppManager {
     }
 
     /* Getter & Setter */
+
+    public ArrayList<CorpReqInfo> getCorpReqInfoArrayList() {
+        return corpReqInfoArrayList;
+    }
+
+    public void setCorpReqInfoArrayList(ArrayList<CorpReqInfo> corpReqInfoArrayList) {
+        this.corpReqInfoArrayList = corpReqInfoArrayList;
+    }
 
     public String getJsons() {
         return jsons;

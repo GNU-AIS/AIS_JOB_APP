@@ -28,13 +28,24 @@ public class EditCarrierActivity extends AppCompatActivity {
             saveCarrier();    
         });
 
+        HashMap<String, Float> mapCarrier = AppManager.getInstance().getMapCarrier();
+        binding.etCredit.setText(mapCarrier.get("credit").toString());
+        binding.etToeic.setText(mapCarrier.get("toeic").toString());
+        binding.etToeicSp.setText(mapCarrier.get("toeic_sp").toString());
+        binding.etOpic.setText(mapCarrier.get("opic").toString());
+        binding.etExternalActivities.setText(mapCarrier.get("external_activities").toString());
+        binding.etCertificate.setText(mapCarrier.get("certificate").toString());
+        binding.etIntern.setText(mapCarrier.get("intern").toString());
+        binding.etAwards.setText(mapCarrier.get("awards").toString());
+        binding.etOverseasStudy.setText(mapCarrier.get("overseas_study").toString());
+
     }
 
     private void saveCarrier() {
         HashMap<String, Float> mapCarrier = new HashMap<>();
         if(binding.etCredit.getText().toString().equals("") || binding.etToeic.getText().toString().equals("") || binding.etToeicSp.getText().toString().equals("") ||
-                binding.etOpic.getText().toString().equals("") || binding.etForeignLan.getText().toString().equals("") || binding.etCertificate.getText().toString().equals("") ||
-                binding.etIntern.getText().toString().equals("") || binding.etVolunteer.getText().toString().equals("") || binding.etAwards.getText().toString().equals("") ||
+                binding.etOpic.getText().toString().equals("") || binding.etExternalActivities.getText().toString().equals("") || binding.etCertificate.getText().toString().equals("") ||
+                binding.etIntern.getText().toString().equals("") || binding.etAwards.getText().toString().equals("") ||
                 binding.etOverseasStudy.getText().toString().equals("")){
             Toast.makeText(this, "입력되지 않은 빈칸이 있습니다.", Toast.LENGTH_SHORT).show();
 
@@ -43,10 +54,9 @@ public class EditCarrierActivity extends AppCompatActivity {
             mapCarrier.put("toeic", Float.valueOf(String.valueOf( binding.etToeic.getText())));
             mapCarrier.put("toeic_sp", Float.valueOf(String.valueOf(binding.etToeicSp.getText())));
             mapCarrier.put("opic", Float.valueOf(String.valueOf(binding.etOpic.getText())));
-            mapCarrier.put("foreign_lan", Float.valueOf(String.valueOf(binding.etForeignLan.getText())));
+            mapCarrier.put("external_activities", Float.valueOf(String.valueOf(binding.etExternalActivities.getText())));
             mapCarrier.put("certificate", Float.valueOf(String.valueOf(binding.etCertificate.getText())));
             mapCarrier.put("intern", Float.valueOf(String.valueOf(binding.etIntern.getText())));
-            mapCarrier.put("volunteer", Float.valueOf(String.valueOf(binding.etVolunteer.getText())));
             mapCarrier.put("awards", Float.valueOf(String.valueOf(binding.etAwards.getText())));
             mapCarrier.put("overseas_study", Float.valueOf(String.valueOf(binding.etOverseasStudy.getText())));
 
