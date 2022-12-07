@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         RequestThread thread = new RequestThread("http://175.200.108.201:5000/corpoutput", 1); // Thread 생성
         thread.start(); // Thread 시작
-        RequestThread thread2 = new RequestThread("http://175.200.108.201:5000/careeroutput", 2); // Thread 생성
+        RequestThread thread2 = new RequestThread("http://175.200.108.201:5050/careeroutput", 2); // Thread 생성
         thread2.start(); // Thread 시작
 
     }
