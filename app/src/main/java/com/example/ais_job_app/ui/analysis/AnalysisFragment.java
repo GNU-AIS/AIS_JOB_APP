@@ -96,10 +96,8 @@ public class AnalysisFragment extends Fragment {
         float toeic = mapCarrier.get("toeic");
         float toeicSp = mapCarrier.get("toeic_sp");
         float opic = mapCarrier.get("opic");
-        float foreign_lan = mapCarrier.get("foreign_lan");
         float certificate = mapCarrier.get("certificate");
         float intern = mapCarrier.get("intern");
-        float volunteer = mapCarrier.get("volunteer");
         float awards = mapCarrier.get("awards");
         float overseasStudy = mapCarrier.get("overseas_study");
 
@@ -107,10 +105,8 @@ public class AnalysisFragment extends Fragment {
         binding.tvToeic.setText("토익: " + (int)toeic);
         binding.tvToeicSp.setText("토익스피킹: " + (int)toeicSp);
         binding.tvOpeic.setText("OPIC: " + (int)opic);
-        binding.tvForeignLan.setText("기타외국어: " + (int)foreign_lan + "개");
         binding.tvCertificate.setText("자격증: " + (int)certificate + "개");
         binding.tvIntern.setText("인턴: " + (int)intern + "개월");
-        binding.tvVolunteer.setText("봉사활동: " + (int)volunteer + "시간");
         binding.tvAwards.setText("교내/외 수상: " + (int)awards + "회");
         binding.tvOverseasStudy.setText("해외경험: " + (int)overseasStudy + "회" );
     }

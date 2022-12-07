@@ -15,8 +15,6 @@ public class AppManager {
 
     private ArrayList<CorpReqInfo> corpReqInfoArrayList = new ArrayList<>();
     private ArrayList<JobCarrierInfo> jobCarrierInfoArrayList = new ArrayList<>();
-    private ArrayList<CorpReqInfo> corpReqInfoArrayList = new ArrayList<>();
-    private String jsons = "";
 
 
 
@@ -52,21 +50,7 @@ public class AppManager {
 
     /* Getter & Setter */
 
-    public ArrayList<CorpReqInfo> getCorpReqInfoArrayList() {
-        return corpReqInfoArrayList;
-    }
 
-    public void setCorpReqInfoArrayList(ArrayList<CorpReqInfo> corpReqInfoArrayList) {
-        this.corpReqInfoArrayList = corpReqInfoArrayList;
-    }
-
-    public String getJsons() {
-        return jsons;
-    }
-
-    public void setJsons(String jsons) {
-        this.jsons = jsons;
-    }
 
     public HashMap<String, Float> getMap() {
         return map;
