@@ -2,15 +2,22 @@ package com.example.ais_job_app.ui.dashboard;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.Image;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
 import com.example.ais_job_app.CorpReqInfo;
@@ -94,6 +101,11 @@ public class CorpReqInfoAdapter extends RecyclerView.Adapter<CorpReqInfoAdapter.
                 dialogBinding.tvTime.setText(corpReqInfo.getTime());
                 dialogBinding.tvArea.setText(corpReqInfo.getArea());
                 dialog.show();
+
+                Window window = dialog.getWindow();
+                window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
             });
 
         }

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cs"
+    android:background="@drawable/bg_inset"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="10dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_marginVertical="5dp"
-            android:background="@drawable/text_border"
+            android:background="@drawable/text_border3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi_light"
@@ -31,7 +34,7 @@
             android:id="@+id/tv_title"
             android:layout_marginVertical="5dp"
             android:lineHeight="30dp"
-            android:background="@drawable/text_border"
+            android:background="@drawable/text_border2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi_light"
@@ -46,7 +49,7 @@
         <TextView
             android:id="@+id/tv_addr"
             android:layout_marginVertical="5dp"
-            android:background="@drawable/text_border"
+            android:background="@drawable/text_border3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi_light"
@@ -63,7 +66,7 @@
         <TextView
             android:id="@+id/tv_day"
             android:layout_marginVertical="5dp"
-            android:background="@drawable/text_border"
+            android:background="@drawable/text_border2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi_light"
@@ -80,7 +83,7 @@
         <TextView
             android:id="@+id/tv_career"
             android:layout_marginVertical="5dp"
-            android:background="@drawable/text_border"
+            android:background="@drawable/text_border3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi_light"
@@ -95,7 +98,7 @@
         <TextView
             android:id="@+id/tv_preference"
             android:layout_marginVertical="5dp"
-            android:background="@drawable/text_border"
+            android:background="@drawable/text_border2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi_light"
@@ -109,7 +112,7 @@
         <TextView
             android:id="@+id/tv_education"
             android:layout_marginVertical="5dp"
-            android:background="@drawable/text_border"
+            android:background="@drawable/text_border3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi_light"
@@ -124,7 +127,7 @@
         <TextView
             android:id="@+id/tv_pattern"
             android:layout_marginVertical="5dp"
-            android:background="@drawable/text_border"
+            android:background="@drawable/text_border2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi_light"
@@ -139,7 +142,7 @@
         <TextView
             android:id="@+id/tv_salary"
             android:layout_marginVertical="5dp"
-            android:background="@drawable/text_border"
+            android:background="@drawable/text_border3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi_light"
@@ -154,7 +157,7 @@
         <TextView
             android:id="@+id/tv_time"
             android:layout_marginVertical="5dp"
-            android:background="@drawable/text_border"
+            android:background="@drawable/text_border2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi_light"
@@ -169,7 +172,7 @@
         <TextView
             android:id="@+id/tv_area"
             android:layout_marginVertical="5dp"
-            android:background="@drawable/text_border"
+            android:background="@drawable/text_border3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi_light"
