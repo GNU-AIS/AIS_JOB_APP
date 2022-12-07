@@ -12,4 +12,6 @@
     <color name="writeColor3">#E0E0E0</color>
 
     <color name="backColor1">#DADADA</color>
+    <color name="backColor2">#e2e3e1</color>
+    <color name="backColor3">#b6b7b9</color>
 </resources>
