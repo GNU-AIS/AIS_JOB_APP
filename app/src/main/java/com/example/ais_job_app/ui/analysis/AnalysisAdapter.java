@@ -1,7 +1,7 @@
 package com.example.ais_job_app.ui.analysis;
 
-import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ais_job_app.CorpReqInfo;
 import com.example.ais_job_app.JobCarrierInfo;
 import com.example.ais_job_app.R;
-import com.example.ais_job_app.databinding.DialCorpReqItemBinding;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +25,11 @@ public class AnalysisAdapter extends RecyclerView.Adapter<AnalysisAdapter.ViewHo
     public AnalysisAdapter(ArrayList<JobCarrierInfo> jobCarrierInfos, Context context, HashMap<String, Float> mapCarrier) {
         this.jobCarrierInfos = jobCarrierInfos;
         this.context = context;
+    }
+
+    public void setListItems(ArrayList<JobCarrierInfo> list){
+        this.jobCarrierInfos = list;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -46,7 +51,7 @@ public class AnalysisAdapter extends RecyclerView.Adapter<AnalysisAdapter.ViewHo
         holder.tv_toeic_sp_n.setText(jobCarrierInfo.getCertificate());
         holder.tv_intern_n.setText(jobCarrierInfo.getIntern());
         holder.tv_opeic_n.setText(jobCarrierInfo.getOpeic());
-        holder.tv_overseas_study_n.setText(jobCarrierInfo.getOverseasStudy());
+        holder.tv_overseas_study_n.setText(jobCarrierInfo.getOverseas_study());
         holder.tv_external_activities_n.setText(jobCarrierInfo.getExternalActivities());
         holder.tv_awards_n.setText(jobCarrierInfo.getAwards());
     }
@@ -92,7 +97,14 @@ public class AnalysisAdapter extends RecyclerView.Adapter<AnalysisAdapter.ViewHo
             tv_external_activities_n = itemView.findViewById(R.id.tv_external_activities_n);
             tv_awards_n = itemView.findViewById(R.id.tv_awards_n);
 
+            // 클릭
+            itemView.setOnClickListener(view -> {
+                JobCarrierInfo jobCarrierInfo = jobCarrierInfos.get(getAdapterPosition());
+                Intent intent = new Intent(view.getContext(), AnalysisViewActivity.class);
+                intent.putExtra("job", jobCarrierInfo);
+                view.getContext().startActivity(intent);
 
+            });
         }
     }
 }

@@ -1,6 +1,8 @@
 package com.example.ais_job_app;
 
-public class JobCarrierInfo implements Cloneable{
+import java.io.Serializable;
+
+public class JobCarrierInfo implements Serializable {
 
     private String corp_name;
     private String time;
@@ -11,7 +13,7 @@ public class JobCarrierInfo implements Cloneable{
     private String certificate;
     private String intern;
     private String external_activities;
-    private String overseasStudy;
+    private String overseas_study;
     private String awards;
     private String major;
     private String university;
@@ -91,12 +93,12 @@ public class JobCarrierInfo implements Cloneable{
         this.external_activities = externalActivities;
     }
 
-    public String getOverseasStudy() {
-        return overseasStudy;
+    public String getOverseas_study() {
+        return overseas_study;
     }
 
-    public void setOverseasStudy(String overseasStudy) {
-        this.overseasStudy = overseasStudy;
+    public void setOverseas_study(String overseas_study) {
+        this.overseas_study = overseas_study;
     }
 
     public String getAwards() {

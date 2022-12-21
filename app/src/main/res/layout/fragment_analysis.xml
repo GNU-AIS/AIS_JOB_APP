@@ -21,6 +21,7 @@
 
 
         <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
             app:queryBackground="@android:color/transparent"
             android:queryBackground="@android:color/transparent"
             app:queryHint="기업의 이름을 입력하세요"
@@ -192,17 +193,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <Spinner
-        android:id="@+id/sp_my_carrier"
-        app:layout_constraintTop_toBottomOf="@id/cdv_carrier"
-        app:layout_constraintEnd_toEndOf="@id/cdv_carrier"
-        android:layout_width="140dp"
-        android:layout_marginTop="5dp"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
-
-
-
     <TextView
         android:textColor="@color/writeColor2"
         android:fontFamily="@font/cafe24"
@@ -273,7 +263,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/sp_my_carrier"
+        app:layout_constraintTop_toBottomOf="@id/cdv_carrier"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
         android:layout_height="0dp"

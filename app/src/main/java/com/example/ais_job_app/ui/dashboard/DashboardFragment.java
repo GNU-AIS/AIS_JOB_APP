@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,11 @@ public class DashboardFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
 
+        for(CorpReqInfo corpReqInfo : corpReqInfos){
+            if(corpReqInfo.getPattern().equals("10")) corpReqInfo.setPattern("정규직");
+            else corpReqInfo.setPattern("비정규직");
+        }
+
         /* 서치뷰 */
         binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -56,6 +62,9 @@ public class DashboardFragment extends Fragment {
             binding.tvIsEmpty.setVisibility(View.GONE);
             binding.tvIsEmpty2.setVisibility(View.GONE);
         }
+        
+
+        
 
         return binding.getRoot();
     }
@@ -64,6 +73,19 @@ public class DashboardFragment extends Fragment {
         // 검색 결과에 맞는 리스트만 만들기 위한 리스트를 만듬
         ArrayList<CorpReqInfo> arrayList = new ArrayList<>();
         for(CorpReqInfo corpReqInfo : corpReqInfos){
+            if(corpReqInfo.getName() == null) corpReqInfo.setName("기업");
+            if(corpReqInfo.getDay() == null) corpReqInfo.setDay("상시모집");
+            if(corpReqInfo.getTime() == null) corpReqInfo.setTime("기업 공고 모집");
+            if(corpReqInfo.getCareer() == null) corpReqInfo.setCareer("경력없음");
+            if(corpReqInfo.getEducation() == null) corpReqInfo.setEducation("학력없음");
+            if(corpReqInfo.getPreference() == null) corpReqInfo.setPreference("우대없음");
+            if(corpReqInfo.getPattern().equals("10")) corpReqInfo.setPattern("정규직");
+            else corpReqInfo.setPattern("비정규직");
+            if(corpReqInfo.getPattern() == null) corpReqInfo.setPattern("추후상의");
+            if(corpReqInfo.getSalary() == null) corpReqInfo.setSalary("추후상의");
+            if(corpReqInfo.getArea() == null) corpReqInfo.setArea("지역상관없음");
+            if(corpReqInfo.getTime() == null) corpReqInfo.setTime("추후상의");
+
             if(corpReqInfo.getName().toLowerCase().contains((str.toLowerCase())) ||
                     corpReqInfo.getDay().toLowerCase().contains((str.toLowerCase())) ||
                     corpReqInfo.getTitle().toLowerCase().contains((str.toLowerCase())) ||
@@ -90,21 +112,6 @@ public class DashboardFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity(), R.array.myRegion, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-        //드롭다운뷰 연결
-        adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-        //UI와 연결
-        binding.spRegion.setAdapter(adapter);
-
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(requireActivity(), R.array.myField, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-        //드롭다운뷰 연결
-        adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-        //UI와 연결
-        binding.spField.setAdapter(adapter2);
-
 
         /**/
         corpReqInfoAdapter = new CorpReqInfoAdapter(corpReqInfos, requireContext());

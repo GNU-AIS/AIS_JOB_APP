@@ -16,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/tv_name"
             android:layout_marginVertical="5dp"
             android:background="@drawable/text_border3"
@@ -31,6 +32,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:textColor="#121212"
             android:id="@+id/tv_title"
             android:layout_marginVertical="5dp"
             android:lineHeight="30dp"
@@ -42,11 +44,12 @@
             android:ellipsize="end"
             android:text="모집 제목"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/tv_addr"
             android:layout_marginVertical="5dp"
             android:background="@drawable/text_border3"
@@ -64,6 +67,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/tv_day"
             android:layout_marginVertical="5dp"
             android:background="@drawable/text_border2"
@@ -76,11 +80,12 @@
             android:autoLink="web"
             android:text="모직 기간"
             android:textStyle="bold"
-            android:textSize="10sp"
+            android:textSize="15sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/tv_career"
             android:layout_marginVertical="5dp"
             android:background="@drawable/text_border3"
@@ -96,6 +101,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/tv_preference"
             android:layout_marginVertical="5dp"
             android:background="@drawable/text_border2"
@@ -110,6 +116,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/tv_education"
             android:layout_marginVertical="5dp"
             android:background="@drawable/text_border3"
@@ -125,6 +132,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/tv_pattern"
             android:layout_marginVertical="5dp"
             android:background="@drawable/text_border2"
@@ -140,6 +148,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/tv_salary"
             android:layout_marginVertical="5dp"
             android:background="@drawable/text_border3"
@@ -155,6 +164,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/tv_time"
             android:layout_marginVertical="5dp"
             android:background="@drawable/text_border2"
@@ -170,6 +180,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/tv_area"
             android:layout_marginVertical="5dp"
             android:background="@drawable/text_border3"

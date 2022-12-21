@@ -1,18 +1,18 @@
 package com.example.ais_job_app;
 
 public class CorpReqInfo {
-    private String name;    // 기업 이름
-    private String day; // 모집일, 마감일
-    private String title;   // 모집 제목
-    private String career;  // 경력
-    private String education;   // 학력
-    private String preference;  // 우대
-    private String pattern; // 고용 형태
-    private String salary;  // 급여
-    private String area;    // 지역
-    private String time;    // 시간
-    private String profile; // 이미지
-    private String basicAddr;   // 고용 주소
+    private String name= "";;    // 기업 이름
+    private String day= "";; // 모집일, 마감일
+    private String title= "";;   // 모집 제목
+    private String career= "";;  // 경력
+    private String education= "";;   // 학력
+    private String preference= "";;  // 우대
+    private String pattern= "";; // 고용 형태
+    private String salary= "";;  // 급여
+    private String area= "";;    // 지역
+    private String time = "";    // 시간
+    private String profile = ""; // 이미지
+    private String basicAddr= "";;   // 고용 주소
 
     public CorpReqInfo(String name, String day, String title, String career, String education, String preference, String pattern, String salary, String area, String time, String profile, String basicAddr) {
         this.name = name;

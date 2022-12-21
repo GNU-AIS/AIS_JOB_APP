@@ -52,10 +52,10 @@ public class CorpReqInfoAdapter extends RecyclerView.Adapter<CorpReqInfoAdapter.
     public void onBindViewHolder(@NonNull CorpReqInfoAdapter.ViewHolder holder, int position) {
         CorpReqInfo corpReqInfo = corpReqInfos.get(position);
         holder.tv_name.setText(corpReqInfo.getName());
-        holder.tv_day.setText(corpReqInfo.getDay());
+        holder.tv_day.setText("모집: " + corpReqInfo.getDay());
         holder.tv_title.setText(corpReqInfo.getTitle());
-        holder.tv_pattern.setText(corpReqInfo.getCareer() + ", " + corpReqInfo.getEducation() + ", " + corpReqInfo.getPreference());
-        holder.tv_career.setText(corpReqInfo.getPattern() + ", " + corpReqInfo.getSalary() + ", " + corpReqInfo.getTime());
+        holder.tv_pattern.setText(corpReqInfo.getCareer() + ", " + corpReqInfo.getEducation() + ", " + (corpReqInfo.getPreference() == null ? "우대 없음" : corpReqInfo.getPreference()));
+        holder.tv_career.setText(corpReqInfo.getPattern() + ", " + "연 " + corpReqInfo.getSalary() + ", " + corpReqInfo.getTime());
         holder.tv_area.setText(corpReqInfo.getArea());
 
     }
@@ -94,10 +94,10 @@ public class CorpReqInfoAdapter extends RecyclerView.Adapter<CorpReqInfoAdapter.
                 dialogBinding.tvAddr.setText(corpReqInfo.getBasicAddr());
                 dialogBinding.tvDay.setText(corpReqInfo.getDay());
                 dialogBinding.tvCareer.setText(corpReqInfo.getCareer());
-                dialogBinding.tvPreference.setText(corpReqInfo.getPreference());
+                dialogBinding.tvPreference.setText(corpReqInfo.getPreference() == null ? "우대 없음" : corpReqInfo.getPreference());
                 dialogBinding.tvEducation.setText(corpReqInfo.getEducation());
                 dialogBinding.tvPattern.setText(corpReqInfo.getPattern());
-                dialogBinding.tvSalary.setText(corpReqInfo.getSalary());
+                dialogBinding.tvSalary.setText("연 " + corpReqInfo.getSalary());
                 dialogBinding.tvTime.setText(corpReqInfo.getTime());
                 dialogBinding.tvArea.setText(corpReqInfo.getArea());
                 dialog.show();

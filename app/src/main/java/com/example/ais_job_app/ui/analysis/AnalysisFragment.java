@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 
 import com.example.ais_job_app.AppManager;
@@ -73,8 +74,6 @@ public class AnalysisFragment extends Fragment {
         fromBottom = AnimationUtils.loadAnimation(requireContext(), R.anim.fab_from_bottom_an);
         toBottom = AnimationUtils.loadAnimation(requireContext(), R.anim.fab_to_bottom_an);
 
-
-
         initCarrierScore();
 
         binding.tvIsEmpty2.setText("표시할 수 있는 커리어가 없어요");
@@ -87,9 +86,42 @@ public class AnalysisFragment extends Fragment {
         /**/
         jobCarrierInfoArrayList = AppManager.getInstance().getJobCarrierInfoArrayList();
 
+        binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                filterList(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if(newText.equals("")){
+                    analysisAdapter.setListItems(jobCarrierInfoArrayList);
+                }
+                return true;
+            }
+        });
+
         return binding.getRoot();
     }
 
+    private void filterList(String str){
+        // 검색 결과에 맞는 리스트만 만들기 위한 리스트를 만듬
+        ArrayList<JobCarrierInfo> arrayList = new ArrayList<>();
+        for(JobCarrierInfo jobCarrierInfo : jobCarrierInfoArrayList){
+
+            if(jobCarrierInfo.getCorpName().toLowerCase().contains((str.toLowerCase()))){
+                arrayList.add(jobCarrierInfo);
+            }
+        }
+
+        if(arrayList.isEmpty()){
+            Toast.makeText(requireContext(), "검색 결과가 없습니다.", Toast.LENGTH_SHORT).show();
+        } else{
+            analysisAdapter.setListItems(arrayList);
+        }
+
+    }
 
     private void initCarrierScore() {
         float credit = mapCarrier.get("credit");
@@ -100,6 +132,7 @@ public class AnalysisFragment extends Fragment {
         float intern = mapCarrier.get("intern");
         float awards = mapCarrier.get("awards");
         float overseasStudy = mapCarrier.get("overseas_study");
+        float extern = mapCarrier.get("external_activities");
 
         binding.tvCredit.setText("학점: " + credit);
         binding.tvToeic.setText("토익: " + (int)toeic);
@@ -109,19 +142,13 @@ public class AnalysisFragment extends Fragment {
         binding.tvIntern.setText("인턴: " + (int)intern + "개월");
         binding.tvAwards.setText("수상 경험: " + (int)awards + "회");
         binding.tvOverseasStudy.setText("해외경험: " + (int)overseasStudy + "회" );
+        binding.tvExternalActivities.setText("대외활동: " + (int)extern + "회");
     }
 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity(), R.array.myCarrier, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-        //드롭다운뷰 연결
-        adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-        //UI와 연결
-        binding.spMyCarrier.setAdapter(adapter);
-
-
 
         // 나의 커리어 보기
         binding.tgb.setOnClickListener(v -> {
@@ -141,10 +168,12 @@ public class AnalysisFragment extends Fragment {
         binding.fab.setOnClickListener(v->{
             onOpenFabClick();
         });
+
         binding.fabEdit.setOnClickListener(v->{
             Intent intent = new Intent(requireActivity(), EditCarrierActivity.class);
             startActivity(intent);
         });
+
         binding.fabClear.setOnClickListener(v->{
             HashMap<String, Float> mapCarrier = new HashMap<>();
             mapCarrier.put("credit", 0.0f);
@@ -231,27 +260,4 @@ public class AnalysisFragment extends Fragment {
         binding = null;
     }
 
-    //Spinner Listener
-    public void spinnerListener() {
-        binding.spMyCarrier.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            //선택 시 작동기능
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
 }
