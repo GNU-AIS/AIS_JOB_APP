@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/maruburi_semibold"
+        android:fontFamily="@font/cafe24"
 
         android:id="@+id/topics_tv"
         android:text="Topics Textview"
