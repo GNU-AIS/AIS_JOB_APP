@@ -7,74 +7,89 @@
     tools:context=".ui.home.HomeFragment">
 
 
-    <TextView
-        android:id="@+id/textView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="100dp"
-        android:text="기업취업분석이란?"
-        android:textColor="#1933C5"
-        android:textSize="15pt"
-        android:fontFamily="@font/maruburi_bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.101" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="122dp">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="377dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginBottom="100dp"
-        android:text="요즘 인기 많은 회사 트렌드를 추천해주면서 올라오는 기업공고를 보여주고 그에 맞는 스펙인지 알려드립니다.
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="30dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="100dp"
+                android:fontFamily="@font/maruburi_bold"
+                android:text="기업취업분석이란?"
+                android:textColor="#1933C5"
+                android:textSize="15pt"
+                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.101" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/maruburi_semibold"
+                android:text="요즘 인기 많은 회사 트렌드를 추천해주면서 올라오는 기업공고를 보여주고 그에 맞는 스펙인지 알려드립니다.
 그리고 또한 자신의 스펙에 맞는 회사 추천도 해드립니다."
-        android:textColor="#1C2037"
-        android:textSize="6pt"
-        android:fontFamily="@font/maruburi_semibold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+                android:textColor="#1C2037"
+                android:textSize="6pt"/>
 
-    <TextView
-        android:id="@+id/text_trend"
-        android:layout_width="345dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="16dp"
-        android:text="최근 채용 트렌드"
-        android:textColor="#41286E"
-        android:textSize="12pt"
-        android:fontFamily="@font/maruburi_bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/text_trend"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/maruburi_bold"
+                android:text="최근 채용 트렌드"
+                android:textColor="#41286E"
+                android:textSize="12pt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="220dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginEnd="107dp"
-        android:layout_marginBottom="100dp"
-        android:src="@drawable/ic_baseline_equalizer_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_trend"
-        app:layout_constraintVertical_bias="1.0" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="220dp"
+                android:layout_height="140dp"
+                android:layout_marginBottom="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_equalizer_24"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="소프트웨어 기술자 평균 임금"
+                android:layout_marginBottom="50dp"
+                android:gravity="center"
+                android:textSize="12pt"/>
+            <ImageView
+                android:id="@+id/iv_graph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </ImageView>
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
