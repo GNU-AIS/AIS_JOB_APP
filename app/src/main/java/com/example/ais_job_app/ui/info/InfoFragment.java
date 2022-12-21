@@ -27,6 +27,8 @@ import java.util.List;
 
 public class InfoFragment extends Fragment {
 
+
+
     private ExpandalbeListViewAdapter listViewAdapter;
     private List<String> chapterList;
     private HashMap<String,List<String>> topicList;
@@ -109,7 +111,7 @@ public class InfoFragment extends Fragment {
 
 
         List<String> topic3 = new ArrayList<>();
-        topic3.add("wawa9308@naver.com");
+        topic3.add("문의하기");
 
 
         List<String> topic4 = new ArrayList<>();

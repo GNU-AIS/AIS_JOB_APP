@@ -1,6 +1,7 @@
 package com.example.ais_job_app.ui.info;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,6 +86,22 @@ public class ExpandalbeListViewAdapter extends BaseExpandableListAdapter {
 
         TextView topicTv = convertView.findViewById(R.id.topics_tv);
         topicTv.setText(topicTitle);
+
+        topicTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(topicTv.getText() == "문의하기")
+                {
+                    Intent email = new Intent(Intent.ACTION_SEND);
+                    email.setType("plain/text");
+                    String[] address = {"bossid001@gnu.ac.kr"};
+                    email.putExtra(Intent.EXTRA_EMAIL, address);
+                    email.putExtra(Intent.EXTRA_SUBJECT, "제목 : ");
+                    email.putExtra(Intent.EXTRA_TEXT, "내용 : ");
+                    context.startActivity(email);
+                }
+            }
+        });
 
         return convertView;
     }
