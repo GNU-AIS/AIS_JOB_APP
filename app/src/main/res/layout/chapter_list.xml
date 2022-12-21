@@ -13,7 +13,7 @@
         android:fontFamily="@font/maruburi_regular"
         android:id="@+id/chapter_tv"
         tool:text="chapter list"
-        android:textSize="12pt"
+        android:textSize="20sp"
         android:textColor="@color/black"
         />
 

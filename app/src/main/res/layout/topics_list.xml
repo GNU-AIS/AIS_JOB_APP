@@ -9,11 +9,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/cafe24"
-
+        android:fontFamily="@font/maruburi_light"
+        android:textColor="@color/black"
         android:id="@+id/topics_tv"
         android:text="Topics Textview"
-        android:textSize="10pt"
+        android:textSize="16sp"
         android:paddingLeft="?android:expandableListPreferredChildIndicatorLeft"
         android:paddingStart="?android:expandableListPreferredChildIndicatorLeft"
         />

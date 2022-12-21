@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
         NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
 
-        RequestThread thread = new RequestThread("http://175.200.108.201:5000/corpoutput", 1); // Thread 생성
+        RequestThread thread = new RequestThread("http://175.200.108.201:5050/corpoutput", 1); // Thread 생성
         thread.start(); // Thread 시작
-        RequestThread thread2 = new RequestThread("http://175.200.108.201:5000/careeroutput", 2); // Thread 생성
+        RequestThread thread2 = new RequestThread("http://175.200.108.201:5050/careeroutput", 2); // Thread 생성
         thread2.start(); // Thread 시작
 
     }

@@ -72,17 +72,11 @@ public class AnalysisViewActivity extends AppCompatActivity {
         if(toeic >= Float.parseFloat(jobCarrierInfo.getToeic())) binding.tvToeicC.setCompoundDrawablesWithIntrinsicBounds(null, null, red, null);
         else binding.tvToeicC.setCompoundDrawablesWithIntrinsicBounds(null, null, blue, null);
 
-        if(toeicSp >= Float.parseFloat(jobCarrierInfo.getToeic_sp())) binding.tvToeicSpC.setCompoundDrawablesWithIntrinsicBounds(null, null, red, null);
-        else binding.tvToeicSpC.setCompoundDrawablesWithIntrinsicBounds(null, null, blue, null);
-
         if(certificate >= Float.parseFloat(jobCarrierInfo.getCertificate())) binding.tvCertificateC.setCompoundDrawablesWithIntrinsicBounds(null, null, red, null);
         else binding.tvCertificateC.setCompoundDrawablesWithIntrinsicBounds(null, null, blue, null);
 
         if(intern >= Float.parseFloat(jobCarrierInfo.getIntern())) binding.tvInternC.setCompoundDrawablesWithIntrinsicBounds(null, null, red, null);
         else binding.tvInternC.setCompoundDrawablesWithIntrinsicBounds(null, null, blue, null);
-
-        if(opic >= Float.parseFloat(jobCarrierInfo.getOpeic())) binding.tvOpeicC.setCompoundDrawablesWithIntrinsicBounds(null, null, red, null);
-        else binding.tvOpeicC.setCompoundDrawablesWithIntrinsicBounds(null, null, blue, null);
 
         if(overseasStudy >= Float.parseFloat(jobCarrierInfo.getOverseas_study())) binding.tvOverseasStudyC.setCompoundDrawablesWithIntrinsicBounds(null, null, red, null);
         else binding.tvOverseasStudyC.setCompoundDrawablesWithIntrinsicBounds(null, null, blue, null);

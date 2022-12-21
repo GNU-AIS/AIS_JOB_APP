@@ -102,6 +102,19 @@ public class AnalysisFragment extends Fragment {
             }
         });
 
+
+        for(JobCarrierInfo jobCarrierInfo : jobCarrierInfoArrayList){
+            if(jobCarrierInfo.getCredit().equals("-")) jobCarrierInfo.setCredit("0");
+            if(jobCarrierInfo.getToeic().equals("-")) jobCarrierInfo.setToeic("0");
+            if(jobCarrierInfo.getToeic_sp().equals("-")) jobCarrierInfo.setToeic_sp("0");
+            if(jobCarrierInfo.getCertificate().equals("-")) jobCarrierInfo.setCertificate("0");
+            if(jobCarrierInfo.getIntern().equals("-")) jobCarrierInfo.setIntern("0");
+            if(jobCarrierInfo.getOpeic().equals("-")) jobCarrierInfo.setOpeic("0");
+            if(jobCarrierInfo.getOverseas_study().equals("-")) jobCarrierInfo.setOverseas_study("0");
+            if(jobCarrierInfo.getExternalActivities().equals("-")) jobCarrierInfo.setExternalActivities("0");
+            if(jobCarrierInfo.getAwards().equals("-")) jobCarrierInfo.setAwards("0");
+        }
+
         return binding.getRoot();
     }
 
