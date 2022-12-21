@@ -147,7 +147,10 @@ public class InfoFragment extends Fragment {
 
 
         List<String> topic4 = new ArrayList<>();
-        topic4.add("Android Studio\nPyCharm\nMySQL 8.0\nOpenAPI WorkNet");
+        topic4.add("컴퓨터공학부 학생들의 진로를 위해" +
+                "\n개발자 관련 채용 공고를 제공하며" +
+                "\n사용 허가받은 공개된 정보만 제공합니다." +
+                "\n\nAndroid Studio\nPyCharm\nMySQL 8.0\nOpenAPI WorkNet");
 
 
 
