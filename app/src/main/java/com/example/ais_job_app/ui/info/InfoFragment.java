@@ -13,7 +13,10 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ListAdapter;
+
 import com.example.ais_job_app.R;
 import com.example.ais_job_app.databinding.FragmentInfoBinding;
 
@@ -35,7 +38,52 @@ public class InfoFragment extends Fragment {
         showList();
         listViewAdapter = new ExpandalbeListViewAdapter(requireContext(),chapterList,topicList);
         binding.eListView.setAdapter(listViewAdapter);
+        binding.eListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v,
+                                        int groupPosition, long id) {
+                setListViewHeight(parent, groupPosition);
+                return false;
+            }
+        });
         return binding.getRoot();
+    }
+
+    private void setListViewHeight(ExpandableListView listView,
+                                   int group) {
+        ExpandableListAdapter listAdapter = (ExpandableListAdapter) listView.getExpandableListAdapter();
+        int totalHeight = 0;
+        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(),
+                View.MeasureSpec.EXACTLY);
+        for (int i = 0; i < listAdapter.getGroupCount(); i++) {
+            View groupItem = listAdapter.getGroupView(i, false, null, listView);
+            groupItem.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
+
+            totalHeight += groupItem.getMeasuredHeight();
+
+            if (((listView.isGroupExpanded(i)) && (i != group))
+                    || ((!listView.isGroupExpanded(i)) && (i == group))) {
+                for (int j = 0; j < listAdapter.getChildrenCount(i); j++) {
+                    View listItem = listAdapter.getChildView(i, j, false, null,
+                            listView);
+                    listItem.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
+
+                    totalHeight += listItem.getMeasuredHeight();
+
+                }
+            }
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        int height = totalHeight
+                + (listView.getDividerHeight() * (listAdapter.getGroupCount() - 1));
+        if (height < 10)
+            height = 200;
+        params.height = height;
+        listView.setLayoutParams(params);
+        listView.requestLayout();
+
     }
 
     private void showList() {
@@ -43,7 +91,7 @@ public class InfoFragment extends Fragment {
         chapterList = new ArrayList<String>();
         topicList = new HashMap<String, List<String>>();
 
-        chapterList.add("ALS 동아리");
+        chapterList.add("AIS 동아리");
         chapterList.add("앱 활동 기획");
         chapterList.add("앱 문의");
         chapterList.add("앱 정보");
@@ -57,11 +105,11 @@ public class InfoFragment extends Fragment {
 
         List<String> topic2 = new ArrayList<>();
         topic2.add("9.7 ~ 10.26 웹크롤링 공부");
-        topic2.add("11.2 ~ 현재 진행형 앱 개발");
+        topic2.add("11.2 ~ 12.21 앱 개발");
 
 
         List<String> topic3 = new ArrayList<>();
-        topic3.add("경상국립대학교 컴퓨터공학과 김주영을 불러주세용");
+        topic3.add("wawa9308@naver.com");
 
 
         List<String> topic4 = new ArrayList<>();
