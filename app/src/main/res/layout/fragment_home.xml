@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.HomeFragment"
+    android:orientation="vertical">
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="122dp">
-
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:padding="20dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="30dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="10dp"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView"
@@ -27,9 +45,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="50dp"
                 android:fontFamily="@font/maruburi_bold"
-                android:text="기업취업분석이란?"
+                android:text="폰크넷"
                 android:textColor="#1933C5"
                 android:textSize="15pt"
                 app:layout_constraintBottom_toTopOf="@+id/textView2"
@@ -44,52 +62,322 @@
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
                 android:fontFamily="@font/maruburi_semibold"
-                android:text="요즘 인기 많은 회사 트렌드를 추천해주면서 올라오는 기업공고를 보여주고 그에 맞는 스펙인지 알려드립니다.
-그리고 또한 자신의 스펙에 맞는 회사 추천도 해드립니다."
+                android:text="워크넷 API를 사용하여\n 컴퓨터관련직업 구인,구직정보를 제공하며\n 캐치 사이트를 사용하여\n 합격자 스펙을 볼수있습니다.\n 키워드 검색을 통해 정보를 분류하여\n 더 편하게 찾으실수 있습니다."
                 android:textColor="#1C2037"
+                android:lineHeight="35dp"
+                android:layout_gravity="center"
                 android:textSize="6pt"/>
-
-            <TextView
-                android:id="@+id/text_trend"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/maruburi_bold"
-                android:text="최근 채용 트렌드"
-                android:textColor="#41286E"
-                android:textSize="12pt"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2"
-                app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="220dp"
-                android:layout_height="140dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_baseline_equalizer_24"/>
 
-            <TextView
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="소프트웨어 기술자 평균 임금"
-                android:layout_marginBottom="50dp"
-                android:gravity="center"
-                android:textSize="12pt"/>
-            <ImageView
-                android:id="@+id/iv_graph"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                tools:ignore="MissingConstraints">
 
-            </ImageView>
+                <LinearLayout
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="50dp"
+                        android:fontFamily="@font/maruburi_bold"
+                        android:text="검색 트렌드"
+                        android:textColor="#1933C5"
+                        android:textSize="15pt"
+                        app:layout_constraintBottom_toTopOf="@+id/textView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.101" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:fontFamily="@font/maruburi_semibold"
+                        android:text="구글 API를 사용하여\n컴퓨터 관련 직업 인기검색어를\n워드클라우드로 표시합니다.\n더 많은 검색일수록 글자 크기가 더 커집니다."
+                        android:textColor="#1C2037"
+                        android:lineHeight="35dp"
+                        android:layout_gravity="center"
+                        android:textSize="6pt"/>
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:layout_gravity="center"
+                        tools:src="@drawable/ic_baseline_equalizer_24"/>
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="50dp"
+                        android:fontFamily="@font/maruburi_bold"
+                        android:text="컴퓨터 관련 직종\n평균 월급"
+                        android:textColor="#1933C5"
+                        android:textSize="15pt"
+                        app:layout_constraintBottom_toTopOf="@+id/textView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.101" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:fontFamily="@font/maruburi_semibold"
+                        android:text="파이썬에 있는 라이브러리를 사용하여\n컴퓨터 관련 직종별 평균월급그래프를 만들었습니다."
+                        android:textColor="#1C2037"
+                        android:lineHeight="35dp"
+                        android:layout_gravity="center"
+                        android:textSize="6pt"/>
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:layout_gravity="center"
+                        tools:src="@drawable/ic_baseline_equalizer_24"/>
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="50dp"
+                        android:fontFamily="@font/maruburi_bold"
+                        android:text="컴퓨터 관련 직종\n평균 일급"
+                        android:textColor="#1933C5"
+                        android:textSize="15pt"
+                        app:layout_constraintBottom_toTopOf="@+id/textView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.101" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:fontFamily="@font/maruburi_semibold"
+                        android:text="파이썬에 있는 라이브러리를 사용하여\n컴퓨터 관련 직종별 평균일급그래프를 만들었습니다."
+                        android:textColor="#1C2037"
+                        android:lineHeight="35dp"
+                        android:layout_gravity="center"
+                        android:textSize="6pt"/>
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:layout_gravity="center"
+                        tools:src="@drawable/ic_baseline_equalizer_24"/>
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="50dp"
+                        android:fontFamily="@font/maruburi_bold"
+                        android:text="컴퓨터 관련 직종\n평균 시급"
+                        android:textColor="#1933C5"
+                        android:textSize="15pt"
+                        app:layout_constraintBottom_toTopOf="@+id/textView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.101" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:fontFamily="@font/maruburi_semibold"
+                        android:text="파이썬에 있는 라이브러리를 사용하여\n컴퓨터 관련 직종별 평균시급그래프를 만들었습니다."
+                        android:textColor="#1C2037"
+                        android:lineHeight="35dp"
+                        android:layout_gravity="center"
+                        android:textSize="6pt"/>
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:layout_gravity="center"
+                        tools:src="@drawable/ic_baseline_equalizer_24"/>
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
         </LinearLayout>
+
     </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
