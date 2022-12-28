@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.ais_job_app.ui.home.Home_card;
+import com.example.ais_job_app.ui.home.HomecardAdapter;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
